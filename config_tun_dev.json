@@ -27,7 +27,6 @@
    [
      {"tag": "zhuzhai1", "address": "8.8.8.8", "address_strategy": "ipv4_only", "strategy": "ipv4_only", "detour": "test1-fwtd8ygs"},
      {"tag": "zhuzhai2", "address": "8.8.8.8", "address_strategy": "ipv4_only", "strategy": "ipv4_only", "detour": "🇺🇸 美国-12月7日-38.89.134.235"},
-     {"tag": "zhuzhai3", "address": "8.8.8.8", "address_strategy": "ipv4_only", "strategy": "ipv4_only", "detour": "🇺🇸 美国-12月7日-38.89.134.211"},
      {"tag": "dns_direct", "address": "211.137.64.163", "address_strategy": "ipv4_only", "strategy": "ipv4_only", "detour": "🎯 全球直连"},
      {"tag": "dns_proxy", "address": "tls://8.8.8.8", "address_strategy": "ipv4_only", "strategy": "ipv4_only", "detour": "🚀 节点选择"}
    ],
@@ -36,7 +35,6 @@
      {"outbound": "any", "server": "dns_direct", "disable_cache": true},
      {"source_ip_cidr": "192.168.2.188", "server": "zhuzhai1"},
      {"source_ip_cidr": "192.168.2.238", "server": "zhuzhai2"},
-     {"source_ip_cidr": "192.168.2.128", "server": "zhuzhai3"},
      {"clash_mode": "Direct", "server": "dns_direct"},
      {"clash_mode": "Global", "server": "dns_proxy"},
      {"rule_set": "geosite-cn", "action": "route","server": "dns_direct"},
