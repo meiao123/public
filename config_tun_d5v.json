@@ -25,8 +25,8 @@
  {
    "servers": 
    [
-     {"tag": "zhuzhai1", "address": "8.8.8.8", "address_strategy": "ipv4_only", "strategy": "ipv4_only", "detour": "test1-fwtd8ygs"},
-     {"tag": "zhuzhai2", "address": "8.8.8.8", "address_strategy": "ipv4_only", "strategy": "ipv4_only", "detour": "🇺🇸 美国-12月7日-38.89.134.235"},
+     {"tag": "zhuzhai1", "address": "tls://8.8.8.8", "address_strategy": "ipv4_only", "strategy": "ipv4_only", "detour": "test1-fwtd8ygs"},
+     {"tag": "zhuzhai2", "address": "tls://8.8.8.8", "address_strategy": "ipv4_only", "strategy": "ipv4_only", "detour": "🇺🇸 美国-12月7日-38.89.134.235"},
      {"tag": "dns_direct", "address": "211.137.64.163", "address_strategy": "ipv4_only", "strategy": "ipv4_only", "detour": "🎯 全球直连"},
      {"tag": "dns_proxy", "address": "tls://8.8.8.8", "address_strategy": "ipv4_only", "strategy": "ipv4_only", "detour": "🚀 节点选择"}
    ],
