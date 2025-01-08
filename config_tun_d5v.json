@@ -41,11 +41,13 @@
      {"clash_mode": "Global", "server": "fakeip"},
      {"rule_set": "geosite-cn", "action": "route","server": "dns_direct"},
      {"rule_set": "geosite-geolocation-!cn", "server": "dns_proxy"},
-     "query_type": [
+     {
+      "query_type": [
         "A",
         "AAAA"
       ],
       "server": "fakeip"
+    }
    ],
    "independent_cache": true,
    "final": "dns_proxy",
