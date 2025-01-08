@@ -40,7 +40,7 @@
      {"clash_mode": "Direct", "server": "dns_direct"},
      {"clash_mode": "Global", "server": "fakeip"},
      {"rule_set": "geosite-cn", "action": "route","server": "dns_direct"},
-     {"rule_set": "geosite-geolocation-!cn", "server": "dns_proxy"},
+     {"rule_set": "geosite-geolocation-!cn", "server": "fakeip"},
      {
       "query_type": [
         "A",
