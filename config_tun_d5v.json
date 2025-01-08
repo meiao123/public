@@ -48,7 +48,7 @@
     }
    ],
    "independent_cache": true,
-   "final": "fakeip",
+   "final": "dns_direct",
    "strategy": "ipv4_only"
 },
 
