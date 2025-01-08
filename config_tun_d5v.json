@@ -26,8 +26,6 @@
    "fakeip": {"enabled": true, "inet4_range": "198.18.0.0/15", "inet6_range": "fc00::/18"},
    "servers": 
    [
-     {"tag": "zhuzhai1", "address": "8.8.8.8", "address_strategy": "ipv4_only", "strategy": "ipv4_only", "detour": "test1-fwtd8ygs"},
-     {"tag": "zhuzhai2", "address": "8.8.8.8", "address_strategy": "ipv4_only", "strategy": "ipv4_only", "detour": "🇺🇸 美国-12月7日-38.89.134.235"},
      {"tag": "fakeip", "address": "fakeip"},
      {"tag": "dns_direct", "address": "211.137.64.163", "address_strategy": "ipv4_only", "strategy": "ipv4_only", "detour": "🎯 全球直连"},
      {"tag": "dns_proxy", "address": "tls://8.8.8.8", "address_strategy": "ipv4_only", "strategy": "ipv4_only", "detour": "🚀 节点选择"}
@@ -50,7 +48,7 @@
     }
    ],
    "independent_cache": true,
-   "final": "dns_proxy",
+   "final": "fakeip",
    "strategy": "ipv4_only"
 },
 
