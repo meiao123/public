@@ -27,11 +27,19 @@
    [
      {"tag": "Fakeip", "address": "fakeip"},
      {"tag": "dns_direct", "address": "211.137.64.163", "address_strategy": "ipv4_only", "strategy": "ipv4_only", "detour": "🎯 全球直连"},
-     {"tag": "dns_proxy", "address": "tls://8.8.8.8", "address_strategy": "ipv4_only", "strategy": "ipv4_only", "detour": "🚀 节点选择"}
+     {"tag": "dns_proxy", "address": "tls://8.8.8.8", "address_strategy": "ipv4_only", "strategy": "ipv4_only", "detour": "🚀 节点选择"},
+     {"tag": "zhuzhai1", "address": "tcp://8.8.8.8", "address_strategy": "ipv4_only", "strategy": "ipv4_only", "detour": "test1-fwtd8ygs"},
+     {"tag": "zhuzhai1.2", "address": "udp://8.8.8.8", "address_strategy": "ipv4_only", "strategy": "ipv4_only", "detour": "test1-fwtd8ygs"},
+     {"tag": "zhuzhai2", "address": "tcp://8.8.8.8", "address_strategy": "ipv4_only", "strategy": "ipv4_only", "detour": "🇺🇸 美国-12月7日-38.89.134.235"},
+     {"tag": "zhuzhai2.2", "address": "udp://8.8.8.8", "address_strategy": "ipv4_only", "strategy": "ipv4_only", "detour": "🇺🇸 美国-12月7日-38.89.134.235"},
    ],
    "rules": 
    [
      {"outbound": "any", "server": "dns_direct", "disable_cache": true},
+     {"source_ip_cidr": "192.168.31.44", "network": "tcp", "server": "zhuzhai1"},
+     {"source_ip_cidr": "192.168.31.44", "network": "udp", "server": "zhuzhai1.2"},
+     {"source_ip_cidr": "192.168.31.43", "network": "tcp", "server": "zhuzhai2"},
+     {"source_ip_cidr": "192.168.31.43", "network": "udp", "server": "zhuzhai2.2"},
      {"clash_mode": "Direct", "server": "dns_direct"},
      {"clash_mode": "Global", "server": "Fakeip"},
      {"rule_set": "geosite-cn", "action": "route","server": "dns_direct"},
