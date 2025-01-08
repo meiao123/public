@@ -31,7 +31,7 @@
      {"tag": "zhuzhai1", "address": "tcp://8.8.8.8", "address_strategy": "ipv4_only", "strategy": "ipv4_only", "detour": "test1-fwtd8ygs"},
      {"tag": "zhuzhai1.2", "address": "udp://8.8.8.8", "address_strategy": "ipv4_only", "strategy": "ipv4_only", "detour": "test1-fwtd8ygs"},
      {"tag": "zhuzhai2", "address": "tcp://8.8.8.8", "address_strategy": "ipv4_only", "strategy": "ipv4_only", "detour": "🇺🇸 美国-12月7日-38.89.134.235"},
-     {"tag": "zhuzhai2.2", "address": "udp://8.8.8.8", "address_strategy": "ipv4_only", "strategy": "ipv4_only", "detour": "🇺🇸 美国-12月7日-38.89.134.235"},
+     {"tag": "zhuzhai2.2", "address": "udp://8.8.8.8", "address_strategy": "ipv4_only", "strategy": "ipv4_only", "detour": "🇺🇸 美国-12月7日-38.89.134.235"}
    ],
    "rules": 
    [
