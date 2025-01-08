@@ -41,7 +41,8 @@
         "AAAA"
       ],
       "server": "Fakeip"
-    }
+    },
+     {"protocol": "dns", "action": "reject"}
    ], 
    "final": "dns_direct",
    "strategy": "ipv4_only"
