@@ -42,7 +42,7 @@
       ],
       "server": "Fakeip"
     },
-     {"protocol": "dns", "action": "reject"}
+     {"protocol": "dns", "action": "route", "server": "Fakeip"}
    ], 
    "final": "dns_direct",
    "strategy": "ipv4_only"
