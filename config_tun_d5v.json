@@ -38,9 +38,14 @@
      {"source_ip_cidr": "192.168.2.188", "server": "fakeip"},
      {"source_ip_cidr": "192.168.2.238", "server": "fakeip"},
      {"clash_mode": "Direct", "server": "dns_direct"},
-     {"clash_mode": "Global", "server": "dns_proxy"},
+     {"clash_mode": "Global", "server": "fakeip"},
      {"rule_set": "geosite-cn", "action": "route","server": "dns_direct"},
-     {"rule_set": "geosite-geolocation-!cn", "server": "dns_proxy"}
+     {"rule_set": "geosite-geolocation-!cn", "server": "dns_proxy"},
+     "query_type": [
+        "A",
+        "AAAA"
+      ],
+      "server": "fakeip"
    ],
    "independent_cache": true,
    "final": "dns_proxy",
