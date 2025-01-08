@@ -43,8 +43,7 @@
       ],
       "server": "fakeip"
     }
-   ],
-   "independent_cache": true,
+   ], 
    "final": "dns_direct",
    "strategy": "ipv4_only"
 },
