@@ -33,12 +33,9 @@
    "rules": 
    [
      {"outbound": "any", "server": "dns_direct", "disable_cache": true},
-     {"source_ip_cidr": "192.168.2.188", "server": "fakeip"},
-     {"source_ip_cidr": "192.168.2.238", "server": "fakeip"},
      {"clash_mode": "Direct", "server": "dns_direct"},
      {"clash_mode": "Global", "server": "fakeip"},
      {"rule_set": "geosite-cn", "action": "route","server": "dns_direct"},
-     {"rule_set": "geosite-geolocation-!cn", "server": "fakeip"},
      {
       "query_type": [
         "A",
@@ -47,7 +44,6 @@
       "server": "fakeip"
     }
    ],
-   "independent_cache": true,
    "final": "dns_direct",
    "strategy": "ipv4_only"
 },
