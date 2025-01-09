@@ -41,10 +41,10 @@
         "A",
         "AAAA"
       ],
-      "server": "dns_direct"
+      "server": "Fakeip"
     }
    ], 
-   "final": "Fakeip",
+   "final": "dns_direct",
    "strategy": "ipv4_only"
 },
 
