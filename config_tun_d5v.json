@@ -45,7 +45,7 @@
       "server": "Fakeip"
     }
    ], 
-   "final": "mosdns",
+   "final": "dns_direct",
    "strategy": "ipv4_only"
 },
 
