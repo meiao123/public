@@ -44,7 +44,7 @@
       "server": "Fakeip"
     }
    ], 
-   "final": "dns_direct",
+   "final": "Fakeip",
    "strategy": "ipv4_only"
 },
 
