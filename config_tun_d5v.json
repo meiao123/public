@@ -41,7 +41,7 @@
         "A",
         "AAAA"
       ],
-      "server": "Fakeip"
+      "server": "dns_direct"
     }
    ], 
    "final": "Fakeip",
