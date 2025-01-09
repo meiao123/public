@@ -40,8 +40,7 @@
         "AAAA"
       ],
       "server": "Fakeip"
-    },
-     {"protocol": "dns", "action": "route", "server": "Fakeip"}
+    }
    ], 
    "final": "dns_direct",
    "strategy": "ipv4_only"
