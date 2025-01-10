@@ -7,7 +7,7 @@
   
   "experimental": {
     "clash_api": {
-      "external_controller": "192.168.2.1:9095",
+      "external_controller": "192.168.31.2:9095",
       "external_ui": "/etc/sing-box/ui",
       "secret": "",
       "external_ui_download_url": "https://github.meiao.site/https://github.com/MetaCubeX/metacubexd/archive/refs/heads/gh-pages.zip",
