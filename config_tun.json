@@ -36,7 +36,7 @@
      {"source_ip_cidr": "192.168.31.43", "protocol": "dns", "server": "Fakeip"},
      {"clash_mode": "Direct", "server": "dns_direct"},
      {"clash_mode": "Global", "server": "Fakeip"},
-     {"rule_set": "geosite-cn", "action": "route","server": "dns_direct"},
+     {"rule_set": "geosite-cn","server": "dns_direct"},
      {"rule_set": "geosite-geolocation-!cn", "server": "Fakeip"},
      {
       "query_type": [
