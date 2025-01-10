@@ -50,15 +50,6 @@
 
     "inbounds": [
     {
-      "type": "direct",
-      "tag": "direct-in",
-      "listen": "::",
-      "listen_port": 5336,
-      "sniff": true,
-      "sniff_override_destination": false,
-      "sniff_timeout": "300ms"
-    },
-    {
       "type": "tun",
       "address": "172.19.0.1/30",
       "mtu": 9000,
@@ -79,6 +70,15 @@
       "listen_port": 2080,
       "sniff": true,
       "users": []
+    },
+    {
+      "type": "direct",
+      "tag": "direct-in",
+      "listen": "::",
+      "listen_port": 2080,
+      "sniff": true,
+      "sniff_override_destination": false,
+      "sniff_timeout": "300ms"
     }
   ],
 
