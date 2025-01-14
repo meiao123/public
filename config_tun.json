@@ -27,13 +27,10 @@
    [
      {"tag": "Fakeip", "address": "fakeip"},
      {"tag": "dns_direct", "address": "211.137.64.163", "address_strategy": "ipv4_only", "strategy": "ipv4_only", "detour": "🎯 全球直连"},
-     {"tag": "mosdns", "address": "local:5335", "address_strategy": "ipv4_only", "strategy": "ipv4_only", "detour": "🎯 全球直连"}
    ],
    "rules": 
    [
      {"outbound": "any", "server": "dns_direct", "disable_cache": true},
-     {"source_ip_cidr": "192.168.31.44", "protocol": "dns", "server": "Fakeip"},
-     {"source_ip_cidr": "192.168.31.43", "protocol": "dns", "server": "Fakeip"},
      {"clash_mode": "Direct", "server": "dns_direct"},
      {"clash_mode": "Global", "server": "Fakeip"},
      {"rule_set": "geosite-cn","server": "dns_direct"},
