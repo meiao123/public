@@ -31,8 +31,6 @@
    "rules": 
    [
      {"outbound": "any", "server": "dns_direct", "disable_cache": true},
-     {"source_ip_cidr": "192.168.5.35", "protocol": "dns", "server": "Fakeip"},
-     {"source_ip_cidr": "192.168.5.36", "protocol": "dns", "server": "Fakeip"},
      {"clash_mode": "Direct", "server": "dns_direct"},
      {"clash_mode": "Global", "server": "Fakeip"},
      {"rule_set": "geosite-cn","server": "dns_direct"},
