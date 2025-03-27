@@ -10,7 +10,7 @@
       "external_controller": "0.0.0.0:9095",
       "external_ui": "/etc/sing-box/ui",
       "secret": "",
-      "external_ui_download_url": "http://wuligg.meiao.site/https://github.com/MetaCubeX/metacubexd/archive/refs/heads/gh-pages.zip",
+      "external_ui_download_url": "http://wuligg.meiao.site/https://github.com/Zephyruso/zashboard/archive/refs/heads/gh-pages.zip",
       "external_ui_download_detour": "🎯 全球直连",
       "default_mode": "rule"
     },
@@ -74,7 +74,7 @@
   {
       "type": "direct",
       "tag": "direct-in",
-      "listen": "127.0.0.1",
+      "listen": "0.0.0.0",
       "listen_port": 5345
   }
 ],
