@@ -111,7 +111,7 @@
    "rules": 
    [
      {"action": "sniff"},
-     {"port": "53", "action": "hijack-dns"},
+     {"port": 53, "action": "hijack-dns"},
      {"protocol": "dns", "action": "hijack-dns"},
      {"clash_mode": "direct", "outbound": "🎯 全球直连"},
      {"clash_mode": "global", "outbound": "GLOBAL"},
