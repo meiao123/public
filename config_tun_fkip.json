@@ -36,14 +36,7 @@
      {"source_ip_cidr": ["192.168.3.0/24", "192.168.4.0/24", "192.168.5.0/24", "192.168.7.0/24"], "server": "Fakeip"},
      {"rule_set": "geosite-cn","server": "dns_direct"},
      {"rule_set": "geosite-geolocation-!cn", "server": "Fakeip"},
-     {
-      "query_type": [
-        "A",
-        "HTTPS",
-        "AAAA"
-      ],
-      "server": "Fakeip"
-    }
+     {"query_type": ["A", "HTTPS", "AAAA"], "server": "Fakeip"}
    ], 
    "final": "dns_direct",
    "strategy": "ipv4_only"
