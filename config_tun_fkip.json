@@ -26,7 +26,7 @@
    "servers": 
    [
      {"tag": "Fakeip", "address": "fakeip"},
-     {"tag": "dns_direct", "address": "1.1.1.1", "address_strategy": "ipv4_only", "strategy": "ipv4_only", "detour": "🎯 全球直连"}
+     {"tag": "dns_direct", "address": "211.137.58.20", "address_strategy": "ipv4_only", "strategy": "ipv4_only", "detour": "🎯 全球直连"}
    ],
    "rules": 
    [
