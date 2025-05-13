@@ -26,6 +26,7 @@
    "servers": 
    [
      {"tag": "Fakeip", "address": "fakeip"},
+     {"tag": "H3Dns", "address": "https://cloudflare-dns.com/dns-query", "address_resolver": "dns_direct", "address_strategy": "ipv4_only", "detour": "🚀 节点选择"},
      {"tag": "dns_direct", "address": "211.137.58.20", "address_strategy": "ipv4_only", "strategy": "ipv4_only", "detour": "🎯 全球直连"}
    ],
    "rules": 
@@ -34,6 +35,7 @@
      {"clash_mode": "Direct", "server": "dns_direct"},
      {"clash_mode": "Global", "server": "Fakeip"},
      {"source_ip_cidr": ["192.168.3.0/24", "192.168.4.0/24", "192.168.5.0/24", "192.168.7.0/24"], "server": "Fakeip"},
+     {"rule_set": "geosite-apple", "server": "H3Dns"},
      {"rule_set": "geosite-cn","server": "dns_direct"},
      {"rule_set": "geosite-geolocation-!cn", "server": "Fakeip"},
      {"query_type": ["A", "HTTPS", "AAAA"], "server": "Fakeip"}
