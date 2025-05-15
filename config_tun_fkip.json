@@ -26,10 +26,10 @@
    "servers": 
    [
      {"tag": "Fakeip", "address": "fakeip"},
-     {"tag": "H3Dns_tk01", "address": "https://cloudflare-dns.com/dns-query", "address_resolver": "dns_direct", "address_strategy": "ipv4_only", "detour": "tk01"},
-     {"tag": "H3Dns_tk02", "address": "https://cloudflare-dns.com/dns-query", "address_resolver": "dns_direct", "address_strategy": "ipv4_only", "detour": "tk02"},
-     {"tag": "H3Dns_tk03", "address": "https://cloudflare-dns.com/dns-query", "address_resolver": "dns_direct", "address_strategy": "ipv4_only", "detour": "tk03"},
-     {"tag": "H3Dns_tk04", "address": "https://cloudflare-dns.com/dns-query", "address_resolver": "dns_direct", "address_strategy": "ipv4_only", "detour": "tk04（中转）"},
+     {"tag": "H3Dns_tk01", "address": "https://dns.google/dns-query", "address_resolver": "dns_direct", "address_strategy": "ipv4_only", "detour": "tk01"},
+     {"tag": "H3Dns_tk02", "address": "https://dns.google/dns-query", "address_resolver": "dns_direct", "address_strategy": "ipv4_only", "detour": "tk02"},
+     {"tag": "H3Dns_tk03", "address": "https://dns.google/dns-query", "address_resolver": "dns_direct", "address_strategy": "ipv4_only", "detour": "tk03"},
+     {"tag": "H3Dns_tk04", "address": "https://dns.google/dns-query", "address_resolver": "dns_direct", "address_strategy": "ipv4_only", "detour": "tk04（中转）"},
      {"tag": "H3Dns", "address": "https://cloudflare-dns.com/dns-query", "address_resolver": "dns_direct", "address_strategy": "ipv4_only", "detour": "🚀 节点选择"},
      {"tag": "dns_direct", "address": "211.137.58.20", "address_strategy": "ipv4_only", "strategy": "ipv4_only", "detour": "🎯 全球直连"}
    ],
