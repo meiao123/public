@@ -26,6 +26,10 @@
    "servers": 
    [
      {"tag": "Fakeip", "address": "fakeip"},
+     {"tag": "H3Dns_tk01", "address": "https://cloudflare-dns.com/dns-query", "address_resolver": "dns_direct", "address_strategy": "ipv4_only", "detour": "tk01"},
+     {"tag": "H3Dns_tk02", "address": "https://cloudflare-dns.com/dns-query", "address_resolver": "dns_direct", "address_strategy": "ipv4_only", "detour": "tk02"},
+     {"tag": "H3Dns_tk03", "address": "https://cloudflare-dns.com/dns-query", "address_resolver": "dns_direct", "address_strategy": "ipv4_only", "detour": "tk03"},
+     {"tag": "H3Dns_tk04", "address": "https://cloudflare-dns.com/dns-query", "address_resolver": "dns_direct", "address_strategy": "ipv4_only", "detour": "tk04（中转）"},
      {"tag": "H3Dns", "address": "https://cloudflare-dns.com/dns-query", "address_resolver": "dns_direct", "address_strategy": "ipv4_only", "detour": "🚀 节点选择"},
      {"tag": "dns_direct", "address": "211.137.58.20", "address_strategy": "ipv4_only", "strategy": "ipv4_only", "detour": "🎯 全球直连"}
    ],
@@ -34,7 +38,12 @@
      {"outbound": "any", "server": "dns_direct", "disable_cache": true},
      {"clash_mode": "Direct", "server": "dns_direct"},
      {"clash_mode": "Global", "server": "Fakeip"},
+     {"source_ip_cidr": "192.168.3.0/24", "rule_set": "geosite-apple", "server": "H3Dns_tk01"},
+     {"source_ip_cidr": "192.168.4.0/24", "rule_set": "geosite-apple", "server": "H3Dns_tk02"},
+     {"source_ip_cidr": "192.168.5.0/24", "rule_set": "geosite-apple", "server": "H3Dns_tk03"},
+     {"source_ip_cidr": "192.168.7.0/24", "rule_set": "geosite-apple", "server": "H3Dns_tk04"},
      {"source_ip_cidr": ["192.168.3.0/24", "192.168.4.0/24", "192.168.5.0/24", "192.168.7.0/24"], "server": "Fakeip"},
+     {"rule_set": "geosite-tiktok", "server": "Fakeip"},
      {"rule_set": "geosite-apple", "server": "H3Dns"},
      {"rule_set": "geosite-cn","server": "dns_direct"},
      {"rule_set": "geosite-geolocation-!cn", "server": "Fakeip"},
