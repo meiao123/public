@@ -166,7 +166,7 @@
     { "tag": "geoip-apple", "type": "remote", "format": "binary", "url": "http://xxqq.meiao.site/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo-lite/geoip/apple.srs", "download_detour": "🎯 全球直连" },
     { "tag": "geoip-cn", "type": "remote", "format": "binary", "url": "http://xxqq.meiao.site/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geoip/cn.srs", "download_detour": "🎯 全球直连" },
     { "tag": "geoip-private", "type": "remote", "format": "binary", "url": "http://xxqq.meiao.site/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geoip/private.srs", "download_detour": "🎯 全球直连" },
-    { "tag": "domain-whoami", "type": "remote", "format": "binary", "url": "http://xxqq.meiao.site/https://raw.githubusercontent.com/meiao123/public/main/domain-whoami.srs", "download_detour": "🎯 全球直连" }
+    { "tag": "domain-whoami", "type": "remote", "format": "binary", "url": "http://xxqq.meiao.site/https://github.com/meiao123/public/raw/refs/heads/main/domain-whoami.srs", "download_detour": "🎯 全球直连" }
   ]
 }
 }
