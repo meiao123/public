@@ -2,7 +2,7 @@
   "version": 3,
   "rules": [
     {
-      "domain": [
+      "domain_suffix": [
         "whoami.akamai.net",
         "whoami.akamai.com",
         "whoami.ds.akahelp.net",
@@ -12,6 +12,12 @@
         "ipinfo.io",
         "ip-api.com",
         "icanhazip.com",
+        "odr.itunes.g.aaplimg.com",
+        "akamaiedge.net",
+        "time.g.aaplimg.com.",
+        "downloaddispatch.itunes.apple.com",
+        "api.snapkit.com",
+        "roovza-launches.appsflyersdk.com",
         "myip.opendns.com"
       ]
     }
