@@ -38,14 +38,20 @@
      {"outbound": "any", "server": "dns_direct", "disable_cache": true},
      {"clash_mode": "Direct", "server": "dns_direct"},
      {"clash_mode": "Global", "server": "Fakeip"},
+     {"rule_set": "geosite-tiktok", "server": "Fakeip"},
+     {"source_ip_cidr": "192.168.2.0/24", "rule_set": "domain-whoami", "server": "H3Dns"},
+     {"source_ip_cidr": "192.168.3.0/24", "rule_set": "domain-whoami", "server": "H3Dns_tk01"},
+     {"source_ip_cidr": "192.168.4.0/24", "rule_set": "domain-whoami", "server": "H3Dns_tk02"},
+     {"source_ip_cidr": "192.168.5.0/24", "rule_set": "domain-whoami", "server": "H3Dns_tk03"},
+     {"source_ip_cidr": "192.168.7.0/24", "rule_set": "domain-whoami", "server": "H3Dns_tk04"},
+     {"source_ip_cidr": "192.168.2.0/24", "rule_set": "geosite-apple", "server": "H3Dns"},
      {"source_ip_cidr": "192.168.3.0/24", "rule_set": "geosite-apple", "server": "H3Dns_tk01"},
      {"source_ip_cidr": "192.168.4.0/24", "rule_set": "geosite-apple", "server": "H3Dns_tk02"},
      {"source_ip_cidr": "192.168.5.0/24", "rule_set": "geosite-apple", "server": "H3Dns_tk03"},
      {"source_ip_cidr": "192.168.7.0/24", "rule_set": "geosite-apple", "server": "H3Dns_tk04"},
      {"source_ip_cidr": ["192.168.3.0/24", "192.168.4.0/24", "192.168.5.0/24", "192.168.7.0/24"], "server": "Fakeip"},
      {"rule_set": "domain-whoami", "server": "Fakeip"},
-     {"rule_set": "geosite-tiktok", "server": "Fakeip"},
-     {"rule_set": "geosite-apple", "server": "H3Dns"},
+     {"rule_set": "geosite-apple", "server": "Fakeip"},
      {"rule_set": "geosite-cn","server": "dns_direct"},
      {"rule_set": "geosite-geolocation-!cn", "server": "Fakeip"},
      {"query_type": ["A", "HTTPS", "AAAA"], "server": "Fakeip"}
@@ -81,7 +87,7 @@
   {
       "type": "direct",
       "tag": "direct-in",
-      "listen": "0.0.0.0",
+      "listen": "127.0.0.1",
       "listen_port": 5345
   }
 ],
@@ -162,7 +168,7 @@
     { "tag": "geoip-apple", "type": "remote", "format": "binary", "url": "http://xxqq.meiao.site/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo-lite/geoip/apple.srs", "download_detour": "🎯 全球直连" },
     { "tag": "geoip-cn", "type": "remote", "format": "binary", "url": "http://xxqq.meiao.site/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geoip/cn.srs", "download_detour": "🎯 全球直连" },
     { "tag": "geoip-private", "type": "remote", "format": "binary", "url": "http://xxqq.meiao.site/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geoip/private.srs", "download_detour": "🎯 全球直连" },
-    { "tag": "domain-whoami", "type": "remote", "format": "binary", "url": "http://xxqq.meiao.site/https://github.com/meiao123/public/raw/refs/heads/main/domain-whoami.srs", "download_detour": "🎯 全球直连" }
+    { "tag": "domain-whoami", "type": "remote", "format": "source", "url": "http://xxqq.meiao.site/https://raw.githubusercontent.com/meiao123/public/refs/heads/main/domain-whoami.json", "download_detour": "🎯 全球直连" }
   ]
 }
 }
