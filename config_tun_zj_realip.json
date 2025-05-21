@@ -33,7 +33,6 @@
    "rules": 
    [
      {"outbound": "any", "server": "dns_direct", "disable_cache": true},
-     {"clash_mode": "Direct", "server": "dns_direct"},
      {"source_ip_cidr": "192.168.3.0/24", "server": "DoH_tk01"},
      {"source_ip_cidr": "192.168.4.0/24", "server": "DoH_tk02"},
      {"source_ip_cidr": "192.168.5.0/24", "server": "DoH_tk03"},
