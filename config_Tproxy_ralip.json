@@ -25,6 +25,7 @@
    "servers": 
    [
      {"tag": "dns_proxy", "address": "1.1.1.1", "address_strategy": "ipv4_only", "strategy": "ipv4_only", "detour": "🚀 节点选择"},
+     {"tag": "DoH", "address": "https://cloudflare-dns.com/dns-query", "address_resolver": "dns_proxy", "address_strategy": "ipv4_only", "strategy": "ipv4_only", "detour": "🚀 节点选择"},
      {"tag": "dns_direct", "address": "192.168.1.28:5225", "address_strategy": "ipv4_only", "strategy": "ipv4_only", "detour": "🎯 全球直连"}
    ],
    "rules": 
@@ -33,7 +34,8 @@
      {"clash_mode": "Direct", "server": "dns_direct"},
      {"clash_mode":  "Global", "server": "dns_proxy"},
      {"rule_set": "geosite-cn","server": "dns_direct"},
-     {"rule_set": "geosite-geolocation-!cn", "server": "dns_proxy"}
+     {"rule_set": "geosite-geolocation-!cn", "server": "dns_proxy"},
+     {"query_type": "HTTPS", "server": "DoH"}
    ], 
    "final": "dns_proxy",
    "strategy": "ipv4_only"
