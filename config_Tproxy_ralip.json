@@ -25,6 +25,8 @@
    "servers": 
    [
      {"tag": "dns_proxy", "address": "1.1.1.1", "address_strategy": "ipv4_only", "strategy": "ipv4_only", "detour": "🚀 节点选择"},
+     {"tag": "chat", "address": "1.1.1.1", "address_strategy": "ipv4_only", "strategy": "ipv4_only", "detour": "🤖 OpenAI"},
+     {"tag": "discord", "address": "1.1.1.1", "address_strategy": "ipv4_only", "strategy": "ipv4_only", "detour": "🐬 discord"},
      {"tag": "DoH", "address": "https://cloudflare-dns.com/dns-query", "address_resolver": "dns_proxy", "address_strategy": "ipv4_only", "strategy": "ipv4_only", "detour": "🚀 节点选择"},
      {"tag": "dns_direct", "address": "192.168.1.28:5225", "address_strategy": "ipv4_only", "strategy": "ipv4_only", "detour": "🎯 全球直连"}
    ],
@@ -33,6 +35,8 @@
      {"outbound": "any", "server": "dns_direct", "disable_cache": true},
      {"clash_mode": "Direct", "server": "dns_direct"},
      {"clash_mode":  "Global", "server": "dns_proxy"},
+     {"rule_set": "geosite-chat","server": "chat"},
+     {"rule_set": "geosite-discord","server": "discord"},
      {"rule_set": "geosite-cn","server": "dns_direct"},
      {"query_type": "HTTPS", "server": "DoH"},
      {"rule_set": "geosite-geolocation-!cn", "server": "dns_proxy"}
