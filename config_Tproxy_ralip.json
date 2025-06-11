@@ -35,11 +35,11 @@
      {"outbound": "any", "server": "dns_direct", "disable_cache": true},
      {"clash_mode": "Direct", "server": "dns_direct"},
      {"clash_mode":  "Global", "server": "dns_proxy"},
-     {"port": "5225","server": "dns_direct"},
+     {"port": 5225,"server": "dns_direct"},
      {"rule_set": "geosite-chat","server": "chat"},
      {"rule_set": "geosite-discord","server": "discord"},
      {"query_type": "HTTPS", "server": "DoH"},
-     {"port": "5445","server": "dns_proxy"},
+     {"port": 5445,"server": "dns_proxy"},
      {"rule_set": "geosite-cn","server": "dns_direct"},
      {"rule_set": "geosite-geolocation-!cn", "server": "dns_proxy"}
    ], 
