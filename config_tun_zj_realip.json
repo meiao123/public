@@ -76,7 +76,9 @@
   "outbounds": [
     { "tag": "🤖 住宅家宽", "type": "selector", "outbounds": ["{all}"], "filter": [{ "action": "include", "keywords": ["38|89|tk"] }] },
     { "tag": "🎯 全球直连", "type": "direct" },
-    { "tag": "🐠 漏网之鱼", "type": "selector", "outbounds": ["🤖 住宅家宽","🎯 全球直连"] }
+    { "tag": "🐠 漏网之鱼", "type": "selector", "outbounds": ["🤖 住宅家宽","🎯 全球直连"] },
+    { "tag": "GLOBAL", "type": "selector", "outbounds": ["{all}"]},
+    { "tag": "🎯 全球直连", "type": "direct" }
   ],
   
   "route": 
