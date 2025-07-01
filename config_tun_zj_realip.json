@@ -32,7 +32,7 @@
      {"tag": "UDP_tk02", "address": "1.1.1.1", "address_strategy": "ipv4_only", "strategy": "ipv4_only", "detour": "tk02"},
      {"tag": "UDP_tk03", "address": "1.1.1.1", "address_strategy": "ipv4_only", "strategy": "ipv4_only", "detour": "tk03"},
      {"tag": "UDP_tk04", "address": "1.1.1.1", "address_strategy": "ipv4_only", "strategy": "ipv4_only", "detour": "tk04"},
-     {"tag": "dns_direct", "address": "211.137.64.163", "address_strategy": "ipv4_only", "strategy": "ipv4_only", "detour": "🎯 全球直连"}
+     {"tag": "dns_direct", "address": "211.137.58.20", "address_strategy": "ipv4_only", "strategy": "ipv4_only", "detour": "🎯 全球直连"}
    ],
    "rules": 
    [
@@ -75,7 +75,6 @@
 
   "outbounds": [
     { "tag": "🤖 住宅家宽", "type": "selector", "outbounds": ["{all}"], "filter": [{ "action": "include", "keywords": ["38|89|tk"] }] },
-    { "tag": "🎯 全球直连", "type": "direct" },
     { "tag": "🐠 漏网之鱼", "type": "selector", "outbounds": ["🤖 住宅家宽","🎯 全球直连"] },
     { "tag": "GLOBAL", "type": "selector", "outbounds": ["{all}"]},
     { "tag": "🎯 全球直连", "type": "direct" }
@@ -88,7 +87,6 @@
    "rules": 
    [
      {"action": "sniff"},
-     {"port": 5345, "action": "hijack-dns"},
      {"protocol": "dns", "action": "hijack-dns"},
      {"clash_mode": "direct", "outbound": "🎯 全球直连"},
      {"clash_mode": "global", "outbound": "GLOBAL"},
