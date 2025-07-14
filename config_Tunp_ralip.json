@@ -68,6 +68,12 @@
     "listen": "127.0.0.1",
     "listen_port": 2080,
     "users": []
+  },
+  {
+  "tag": "dns-in",
+  "type": "dns",
+  "listen": "127.0.0.1",
+  "listen_port": 1053
   }
 ],
 
