@@ -68,6 +68,13 @@
     "listen": "127.0.0.1",
     "listen_port": 2080,
     "users": []
+  },
+  {
+  "type": "direct",
+  "tag": "dns-in",
+  "listen": "127.0.0.1",
+  "listen_port": 53,
+  "override_port": 5225
   }
 ],
 
