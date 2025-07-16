@@ -68,6 +68,12 @@
     "listen": "127.0.0.1",
     "listen_port": 2080,
     "users": []
+  },
+  {
+  "type": "direct",
+  "tag": "dns-in",
+  "listen": "127.0.0.1",
+  "listen_port": 1053
   }
 ],
 
@@ -104,7 +110,8 @@
    "rules": 
    [
      {"action": "sniff"},
-     {"protocol": "dns", "action": "hijack-dns"},
+     {"source_port": 1053, "action": "hijack-dns"},
+     {"protocol": "dns", "action": "route-options", "override_address": "127.0.0.1", "override_port": 5225},
      {"clash_mode": "direct", "outbound": "🎯 全球直连"},
      {"clash_mode": "global", "outbound": "GLOBAL"},
      {"ip_cidr": [ "192.168.1.0/24", "127.0.0.1"], "outbound": "🎯 全球直连"},
