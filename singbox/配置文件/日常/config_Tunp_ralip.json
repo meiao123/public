@@ -28,7 +28,7 @@
      {"tag": "chat", "address": "1.1.1.1", "address_strategy": "ipv4_only", "strategy": "ipv4_only", "detour": "🤖 OpenAI"},
      {"tag": "discord", "address": "1.1.1.1", "address_strategy": "ipv4_only", "strategy": "ipv4_only", "detour": "🐬 discord"},
      {"tag": "DoH", "address": "https://cloudflare-dns.com/dns-query", "address_resolver": "dns_proxy", "address_strategy": "ipv4_only", "strategy": "ipv4_only", "detour": "🚀 节点选择"},
-     {"tag": "dns_direct", "address": "211.137.58.20", "address_strategy": "ipv4_only", "strategy": "prefer_ipv4", "detour": "🎯 全球直连"}
+     {"tag": "dns_direct", "address": "local", "address_strategy": "ipv4_only", "strategy": "prefer_ipv4", "detour": "🎯 全球直连"}
    ],
    "rules": 
    [
@@ -43,7 +43,7 @@
    ], 
    "final": "dns_proxy",
    "strategy": "ipv4_only"
-}，
+},
 
 "inbounds": [
   {
