@@ -3,9 +3,11 @@
   "rules": [
     {
       "domain_suffix": [
+        "pay16-normal-alisg.pipopay.com",
+        "ismmyx-gcdsdk.appsflyersdk.com",
         "ismmyx-skadsdkless.appsflyersdk.com",
         "ismmyx-launches.appsflyersdk.com",
-        "effectcdn.byteeffecttos-g.com",
+        "byteeffecttos-g.com",
         "capcut-sign-sg.ibyteimg.com",
         "vimo-sg.ibyteimg.com",
         "ulike-sg.ibyteimg.com",
@@ -24,6 +26,9 @@
         "sg.capcut.com",
         "alisg.pipopay.com",
         "sg.pipopay.com",
+        "appsflyersdk.com",
+        "byteeffecttos-g.com",
+        "pipopay.com",
         "evercloud-mya.capcutapi.com",
         "capcutapi.com",
         "capcut.com"
