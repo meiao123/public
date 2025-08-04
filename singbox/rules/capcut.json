@@ -2,6 +2,13 @@
   "version": 2,
   "rules": [
     {
+      "domain": [
+        "i.isnssdk.com",
+        "ismmyx-gcdsdk.appsflyersdk.com",
+        "kefu-im-i18n.byteintl.com",
+        "apple-events.akamaized.net",
+        "p-events-delivery.akamaized.net"
+      ],
       "domain_suffix": [
         "pay16-normal-alisg.pipopay.com",
         "ismmyx-gcdsdk.appsflyersdk.com",
@@ -29,6 +36,7 @@
         "appsflyersdk.com",
         "byteeffecttos-g.com",
         "pipopay.com",
+        "bytedapm.com",
         "evercloud-mya.capcutapi.com",
         "capcutapi.com",
         "capcut.com"
