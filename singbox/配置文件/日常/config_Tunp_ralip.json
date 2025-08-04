@@ -118,6 +118,7 @@
      {"rule_set": ["geosite-google", "geoip-google"], "outbound": "🍀 Google"},
      {"rule_set": ["geosite-telegram", "geoip-telegram"], "outbound": "📲 Telegram"},
      {"rule_set": "geosite-tiktok", "outbound": "🎵 TikTok"},
+     {"rule_set": "geosite-capcut", "outbound": "🎵 TikTok"},
      {"rule_set": ["geosite-netflix", "geoip-netflix"], "outbound": "🎥 Netflix"},
      {"rule_set": ["geosite-apple", "geoip-apple"], "outbound": "🍏 Apple"},
      {"rule_set": "geosite-discord", "outbound": "🐬 discord"},
@@ -145,7 +146,9 @@
     { "tag": "geosite-facebook", "type": "remote", "format": "binary", "url": "https://gh-proxy.com/https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/sing/geo/geosite/facebook.srs", "download_detour": "🎯 全球直连" },
     { "tag": "geosite-geolocation-!cn", "type": "remote", "format": "binary", "url": "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/geolocation-!cn.srs", "download_detour": "🎯 全球直连" },
     { "tag": "geosite-cn", "type": "remote", "format": "binary", "url": "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/cn.srs", "download_detour": "🎯 全球直连" },
-    { "tag": "geosite-private", "type": "remote", "format": "binary", "url": "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/private.srs", "download_detour": "🎯 全球直连" },       
+    { "tag": "geosite-private", "type": "remote", "format": "binary", "url": "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/private.srs", "download_detour": "🎯 全球直连" },
+    { "tag": "geosite-capcut", "type": "remote", "format": "source", "url": "https://gh-proxy.com/https://raw.githubusercontent.com/meiao123/public/refs/heads/main/singbox/%E8%A7%84%E5%88%99%E9%9B%86/capcut.json", "download_detour": "🎯 全球直连" },
+     
     { "tag": "geoip-google", "type": "remote", "format": "binary", "url": "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geoip/google.srs", "download_detour": "🎯 全球直连" },
     { "tag": "geoip-telegram", "type": "remote", "format": "binary", "url": "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geoip/telegram.srs", "download_detour": "🎯 全球直连" },     
     { "tag": "geoip-netflix", "type": "remote", "format": "binary", "url": "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geoip/netflix.srs", "download_detour": "🎯 全球直连" },     
