@@ -2,17 +2,6 @@
   "version": 2,
   "rules": [
     {
-      "domain": [
-        "ismmyx-skadsdkless.appsflyersdk.com",
-        "ismmyx-launches.appsflyersdk.com",
-        "commerce-api.capcut.com",
-        "editor-api-sg.capcut.com",
-        "feed-api-sg.capcut.com",
-        "ismmyx-gcdsdk.appsflyersdk.com",
-        "risk-sg.pipopay.com",
-        "tnc-sg.capcutapi.com",
-        "lf16-effectcdn.byteeffecttos-g.com"
-      ],
       "domain_suffix": [
         "ismmyx-skadsdkless.appsflyersdk.com",
         "ismmyx-launches.appsflyersdk.com",
@@ -32,6 +21,7 @@
         "api-sg.capcut.com",
         "sg.capcutapi.com",
         "sg.ibyteimg.com",
+        "sg.capcut.com",
         "alisg.pipopay.com",
         "sg.pipopay.com",
         "evercloud-mya.capcutapi.com",
