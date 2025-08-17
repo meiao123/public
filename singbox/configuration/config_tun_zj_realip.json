@@ -52,7 +52,7 @@
    ],
    "final": "dns_proxy",
    "strategy": "ipv4_only"
-}，
+},
 
 "inbounds": [
   {
