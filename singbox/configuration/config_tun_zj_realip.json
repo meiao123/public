@@ -28,8 +28,8 @@
      {"tag": "DoH_tk02", "address": "https://cloudflare-dns.com/dns-query", "address_resolver": "UDP_tk02", "address_strategy": "ipv4_only", "detour": "tk02"},
      {"tag": "DoH_NTT1", "address": "https://cloudflare-dns.com/dns-query", "address_resolver": "UDP_NTT1", "address_strategy": "ipv4_only", "detour": "NTT1"},
      {"tag": "DoH_NTT2", "address": "https://cloudflare-dns.com/dns-query", "address_resolver": "UDP_NTT2", "address_strategy": "ipv4_only", "detour": "NTT2"},
-     {"tag": "DoH_NTT2", "address": "https://cloudflare-dns.com/dns-query", "address_resolver": "UDP_NTT3", "address_strategy": "ipv4_only", "detour": "NTT3"},
-     {"tag": "DoH_NTT2", "address": "https://cloudflare-dns.com/dns-query", "address_resolver": "UDP_NTT4", "address_strategy": "ipv4_only", "detour": "NTT4"},
+     {"tag": "DoH_NTT3", "address": "https://cloudflare-dns.com/dns-query", "address_resolver": "UDP_NTT3", "address_strategy": "ipv4_only", "detour": "NTT3"},
+     {"tag": "DoH_NTT4", "address": "https://cloudflare-dns.com/dns-query", "address_resolver": "UDP_NTT4", "address_strategy": "ipv4_only", "detour": "NTT4"},
      {"tag": "UDP_tk01", "address": "1.1.1.1", "address_strategy": "ipv4_only", "strategy": "ipv4_only", "detour": "tk01"},
      {"tag": "UDP_tk02", "address": "1.1.1.1", "address_strategy": "ipv4_only", "strategy": "ipv4_only", "detour": "tk02"},
      {"tag": "UDP_NTT1", "address": "1.1.1.1", "address_strategy": "ipv4_only", "strategy": "ipv4_only", "detour": "NTT1"},
@@ -52,7 +52,7 @@
    ],
    "final": "dns_proxy",
    "strategy": "ipv4_only"
-},
+}，
 
 "inbounds": [
   {
