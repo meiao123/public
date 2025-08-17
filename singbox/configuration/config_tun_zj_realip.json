@@ -26,27 +26,33 @@
    [
      {"tag": "DoH_tk01", "address": "https://cloudflare-dns.com/dns-query", "address_resolver": "UDP_tk01", "address_strategy": "ipv4_only", "detour": "tk01"},
      {"tag": "DoH_tk02", "address": "https://cloudflare-dns.com/dns-query", "address_resolver": "UDP_tk02", "address_strategy": "ipv4_only", "detour": "tk02"},
-     {"tag": "DoH_tk03", "address": "https://cloudflare-dns.com/dns-query", "address_resolver": "UDP_tk03", "address_strategy": "ipv4_only", "detour": "tk03"},
-     {"tag": "DoH_tk04", "address": "https://cloudflare-dns.com/dns-query", "address_resolver": "UDP_tk04", "address_strategy": "ipv4_only", "detour": "tk04"},
+     {"tag": "DoH_NTT1", "address": "https://cloudflare-dns.com/dns-query", "address_resolver": "UDP_NTT1", "address_strategy": "ipv4_only", "detour": "NTT1"},
+     {"tag": "DoH_NTT2", "address": "https://cloudflare-dns.com/dns-query", "address_resolver": "UDP_NTT2", "address_strategy": "ipv4_only", "detour": "NTT2"},
+     {"tag": "DoH_NTT2", "address": "https://cloudflare-dns.com/dns-query", "address_resolver": "UDP_NTT3", "address_strategy": "ipv4_only", "detour": "NTT3"},
+     {"tag": "DoH_NTT2", "address": "https://cloudflare-dns.com/dns-query", "address_resolver": "UDP_NTT4", "address_strategy": "ipv4_only", "detour": "NTT4"},
      {"tag": "UDP_tk01", "address": "1.1.1.1", "address_strategy": "ipv4_only", "strategy": "ipv4_only", "detour": "tk01"},
      {"tag": "UDP_tk02", "address": "1.1.1.1", "address_strategy": "ipv4_only", "strategy": "ipv4_only", "detour": "tk02"},
-     {"tag": "UDP_tk03", "address": "1.1.1.1", "address_strategy": "ipv4_only", "strategy": "ipv4_only", "detour": "tk03"},
-     {"tag": "UDP_tk04", "address": "1.1.1.1", "address_strategy": "ipv4_only", "strategy": "ipv4_only", "detour": "tk04"},
+     {"tag": "UDP_NTT1", "address": "1.1.1.1", "address_strategy": "ipv4_only", "strategy": "ipv4_only", "detour": "NTT1"},
+     {"tag": "UDP_NTT2", "address": "1.1.1.1", "address_strategy": "ipv4_only", "strategy": "ipv4_only", "detour": "NTT2"},
+     {"tag": "UDP_NTT3", "address": "1.1.1.1", "address_strategy": "ipv4_only", "strategy": "ipv4_only", "detour": "NTT3"},
+     {"tag": "UDP_NTT4", "address": "1.1.1.1", "address_strategy": "ipv4_only", "strategy": "ipv4_only", "detour": "NTT4"},
      {"tag": "dns_proxy", "address": "1.1.1.1", "address_strategy": "ipv4_only", "strategy": "ipv4_only", "detour": "🐠 漏网之鱼"},
      {"tag": "dns_direct", "address": "211.137.58.20", "address_strategy": "ipv4_only", "strategy": "ipv4_only", "detour": "🎯 全球直连"}
    ],
    "rules": 
    [
      {"outbound": "any", "server": "dns_direct", "disable_cache": true},
-     {"source_ip_cidr": "192.168.32.0/24", "server": "DoH_tk01"},
-     {"source_ip_cidr": "192.168.33.0/24", "server": "DoH_tk02"},
-     {"source_ip_cidr": "192.168.34.0/24", "server": "DoH_tk03"},
-     {"source_ip_cidr": "192.168.31.0/24", "server": "dns_direct"},
+     {"source_ip_cidr": "192.168.8.0/24", "server": "DoH_tk01"},
+     {"source_ip_cidr": "192.168.9.0/24", "server": "DoH_tk02"},
+     {"source_ip_cidr": "192.168.10.0/24", "server": "DoH_NTT1"},
+     {"source_ip_cidr": "192.168.11.0/24", "server": "DoH_NTT2"},
+     {"source_ip_cidr": "192.168.12.0/24", "server": "DoH_NTT3"},
+     {"source_ip_cidr": "192.168.13.0/24", "server": "DoH_NTT4"},
      {"rule_set": "DNS-alltype", "action": "reject"}
-   ], 
+   ],
    "final": "dns_proxy",
    "strategy": "ipv4_only"
-},
+}，
 
 "inbounds": [
   {
@@ -92,10 +98,12 @@
      {"protocol": "dns", "action": "hijack-dns"},
      {"clash_mode": "direct", "outbound": "🎯 全球直连"},
      {"clash_mode": "global", "outbound": "GLOBAL"},
-     {"source_ip_cidr": "192.168.32.0/24", "outbound": "tk01"},
-     {"source_ip_cidr": "192.168.33.0/24", "outbound": "tk02"},
-     {"source_ip_cidr": "192.168.34.0/24", "outbound": "tk03"},
-     {"source_ip_cidr": "192.168.31.0/24", "outbound": "🎯 全球直连"},
+     {"source_ip_cidr": "192.168.8.0/24", "outbound": "tk01"},
+     {"source_ip_cidr": "192.168.9.0/24", "outbound": "tk02"},
+     {"source_ip_cidr": "192.168.10.0/24", "outbound": "NTT1"},
+     {"source_ip_cidr": "192.168.11.0/24", "outbound": "NTT2"},
+     {"source_ip_cidr": "192.168.12.0/24", "outbound": "NTT3"},
+     {"source_ip_cidr": "192.168.13.0/24", "outbound": "NTT4"},
      {"domain": ["clash.razord.top", "yacd.metacubex.one", "yacd.haishan.me", "d.metacubex.one"], "outbound": "🎯 全球直连"},
      {"rule_set": "geosite-private", "outbound": "🎯 全球直连"}
    ],
