@@ -28,7 +28,7 @@
      {"tag": "chat", "type": "udp", "server": "1.1.1.1", "detour": "🤖 OpenAI"},
      {"tag": "discord", "type": "udp", "server": "1.1.1.1", "detour": "🐬 discord"},
      {"tag": "DoH", "type": "https", "server": "cloudflare-dns.com", "domain_resolver": "dns_proxy", "detour": "🚀 节点选择"},
-     {"tag": "dns_direct", "type": "udp", "server": "211.137.58.20", "detour": "🎯 全球直连"}
+     {"tag": "dns_direct", "type": "udp", "server": "211.137.58.20"}
    ],
    "rules": 
    [
