@@ -8,20 +8,20 @@
   "dns":  {
    "servers": 
    [
-     {"tag": "DoH_tk01", "type": "https", "server": "cloudflare-dns.com", "domain_resolver": "UDP_tk01", "strategy": "ipv4_only", "detour": "tk01"},
-     {"tag": "DoH_tk02", "type": "https", "server": "cloudflare-dns.com", "domain_resolver": "UDP_tk02", "strategy": "ipv4_only", "detour": "tk02"},
-     {"tag": "DoH_NTT1", "type": "https", "server": "cloudflare-dns.com", "domain_resolver": "UDP_NTT1", "strategy": "ipv4_only", "detour": "NTT1"},
-     {"tag": "DoH_NTT2", "type": "https", "server": "cloudflare-dns.com", "domain_resolver": "UDP_NTT2", "strategy": "ipv4_only", "detour": "NTT2"},
-     {"tag": "DoH_NTT3", "type": "https", "server": "cloudflare-dns.com", "domain_resolver": "UDP_NTT3", "strategy": "ipv4_only", "detour": "NTT3"},
-     {"tag": "DoH_NTT4", "type": "https", "server": "cloudflare-dns.com", "domain_resolver": "UDP_NTT4", "strategy": "ipv4_only", "detour": "NTT4"},
-     {"tag": "UDP_tk01", "type": "udp", "server": "1.1.1.1", "strategy": "ipv4_only", "detour": "tk01"},
-     {"tag": "UDP_tk02", "type": "udp", "server": "1.1.1.1", "strategy": "ipv4_only", "detour": "tk02"},
-     {"tag": "UDP_NTT1", "type": "udp", "server": "1.1.1.1", "strategy": "ipv4_only", "detour": "NTT1"},
-     {"tag": "UDP_NTT2", "type": "udp", "server": "1.1.1.1", "strategy": "ipv4_only", "detour": "NTT2"},
-     {"tag": "UDP_NTT3", "type": "udp", "server": "1.1.1.1", "strategy": "ipv4_only", "detour": "NTT3"},
-     {"tag": "UDP_NTT4", "type": "udp", "server": "1.1.1.1", "strategy": "ipv4_only", "detour": "NTT4"},
-     {"tag": "dns_proxy", "type": "udp", "server": "1.1.1.1", "strategy": "ipv4_only", "detour": "🐠 漏网之鱼"},
-     {"tag": "dns_direct", "type": "udp", "server": "211.137.58.20", "strategy": "ipv4_only", "detour": "🎯 全球直连"}
+     {"tag": "DoH_tk01", "type": "https", "server": "cloudflare-dns.com", "domain_resolver": "UDP_tk01", "detour": "tk01"},
+     {"tag": "DoH_tk02", "type": "https", "server": "cloudflare-dns.com", "domain_resolver": "UDP_tk02", "detour": "tk02"},
+     {"tag": "DoH_NTT1", "type": "https", "server": "cloudflare-dns.com", "domain_resolver": "UDP_NTT1", "detour": "NTT1"},
+     {"tag": "DoH_NTT2", "type": "https", "server": "cloudflare-dns.com", "domain_resolver": "UDP_NTT2", "detour": "NTT2"},
+     {"tag": "DoH_NTT3", "type": "https", "server": "cloudflare-dns.com", "domain_resolver": "UDP_NTT3", "detour": "NTT3"},
+     {"tag": "DoH_NTT4", "type": "https", "server": "cloudflare-dns.com", "domain_resolver": "UDP_NTT4", "detour": "NTT4"},
+     {"tag": "UDP_tk01", "type": "udp", "server": "1.1.1.1", "detour": "tk01"},
+     {"tag": "UDP_tk02", "type": "udp", "server": "1.1.1.1", "detour": "tk02"},
+     {"tag": "UDP_NTT1", "type": "udp", "server": "1.1.1.1", "detour": "NTT1"},
+     {"tag": "UDP_NTT2", "type": "udp", "server": "1.1.1.1", "detour": "NTT2"},
+     {"tag": "UDP_NTT3", "type": "udp", "server": "1.1.1.1", "detour": "NTT3"},
+     {"tag": "UDP_NTT4", "type": "udp", "server": "1.1.1.1", "detour": "NTT4"},
+     {"tag": "dns_proxy", "type": "udp", "server": "1.1.1.1", "detour": "🐠 漏网之鱼"},
+     {"tag": "dns_direct", "type": "udp", "server": "211.137.58.20", "detour": "🎯 全球直连"}
    ],
    "rules": 
    [
