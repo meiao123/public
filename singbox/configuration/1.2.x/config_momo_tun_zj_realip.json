@@ -21,7 +21,7 @@
      {"tag": "UDP_NTT3", "type": "udp", "server": "1.1.1.1", "detour": "NTT3"},
      {"tag": "UDP_NTT4", "type": "udp", "server": "1.1.1.1", "detour": "NTT4"},
      {"tag": "dns_proxy", "type": "udp", "server": "1.1.1.1", "detour": "🐠 漏网之鱼"},
-     {"tag": "dns_direct", "type": "udp", "server": "211.137.58.20", "detour": "🎯 全球直连"}
+     {"tag": "dns_direct", "type": "udp", "server": "211.137.58.20"}
    ],
    "rules": 
    [
@@ -56,7 +56,7 @@
      {"source_ip_cidr": "192.168.11.0/24", "outbound": "NTT2"},
      {"source_ip_cidr": "192.168.12.0/24", "outbound": "NTT3"},
      {"source_ip_cidr": "192.168.13.0/24", "outbound": "NTT4"},
-     {"domain": ["clash.razord.top", "yacd.metacubex.one", "yacd.haishan.me", "d.metacubex.one"], "outbound": "🎯 全球直连"},
+     {"domain": ["clash.razord.top", "yacd.metacubex.one", "yacd.haishan.me", "d.metacubex.one"]， "outbound": "🎯 全球直连"},
      {"rule_set": "geosite-private", "outbound": "🎯 全球直连"}
    ],
     
