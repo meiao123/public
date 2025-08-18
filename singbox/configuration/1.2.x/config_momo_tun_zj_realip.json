@@ -1,0 +1,120 @@
+{
+  "log": {
+    "disabled": false,
+    "level": "info",
+    "timestamp": true
+  },
+
+  "dns":  {
+   "servers": 
+   [
+     {"tag": "DoH_tk01", "type": "https", "server": "cloudflare-dns.com", "domain_resolver": "UDP_tk01", "strategy": "ipv4_only", "detour": "tk01"},
+     {"tag": "DoH_tk02", "type": "https", "server": "cloudflare-dns.com", "domain_resolver": "UDP_tk02", "strategy": "ipv4_only", "detour": "tk02"},
+     {"tag": "DoH_NTT1", "type": "https", "server": "cloudflare-dns.com", "domain_resolver": "UDP_NTT1", "strategy": "ipv4_only", "detour": "NTT1"},
+     {"tag": "DoH_NTT2", "type": "https", "server": "cloudflare-dns.com", "domain_resolver": "UDP_NTT2", "strategy": "ipv4_only", "detour": "NTT2"},
+     {"tag": "DoH_NTT3", "type": "https", "server": "cloudflare-dns.com", "domain_resolver": "UDP_NTT3", "strategy": "ipv4_only", "detour": "NTT3"},
+     {"tag": "DoH_NTT4", "type": "https", "server": "cloudflare-dns.com", "domain_resolver": "UDP_NTT4", "strategy": "ipv4_only", "detour": "NTT4"},
+     {"tag": "UDP_tk01", "type": "udp", "server": "1.1.1.1", "strategy": "ipv4_only", "detour": "tk01"},
+     {"tag": "UDP_tk02", "type": "udp", "server": "1.1.1.1", "strategy": "ipv4_only", "detour": "tk02"},
+     {"tag": "UDP_NTT1", "type": "udp", "server": "1.1.1.1", "strategy": "ipv4_only", "detour": "NTT1"},
+     {"tag": "UDP_NTT2", "type": "udp", "server": "1.1.1.1", "strategy": "ipv4_only", "detour": "NTT2"},
+     {"tag": "UDP_NTT3", "type": "udp", "server": "1.1.1.1", "strategy": "ipv4_only", "detour": "NTT3"},
+     {"tag": "UDP_NTT4", "type": "udp", "server": "1.1.1.1", "strategy": "ipv4_only", "detour": "NTT4"},
+     {"tag": "dns_proxy", "type": "udp", "server": "1.1.1.1", "strategy": "ipv4_only", "detour": "🐠 漏网之鱼"},
+     {"tag": "dns_direct", "type": "udp", "server": "211.137.58.20", "strategy": "ipv4_only", "detour": "🎯 全球直连"}
+   ],
+   "rules": 
+   [
+     {"source_ip_cidr": "192.168.8.0/24", "server": "DoH_tk01"},
+     {"source_ip_cidr": "192.168.9.0/24", "server": "DoH_tk02"},
+     {"source_ip_cidr": "192.168.10.0/24", "server": "DoH_NTT1"},
+     {"source_ip_cidr": "192.168.11.0/24", "server": "DoH_NTT2"},
+     {"source_ip_cidr": "192.168.12.0/24", "server": "DoH_NTT3"},
+     {"source_ip_cidr": "192.168.13.0/24", "server": "DoH_NTT4"},
+     {"rule_set": "DNS-alltype", "action": "reject"}
+   ],
+   "final": "dns_proxy",
+   "strategy": "ipv4_only",
+   "independent_cache": true
+  },
+
+  "route": 
+  {
+   "auto_detect_interface": true,
+   "default_domain_resolver": {"server": "dns_direct"},
+   "final": "🐠 漏网之鱼",
+   "rules": 
+   [
+     {"action": "sniff"},
+     {"type": "logical", "mode": "or", "rules": [{"port": 53}, {"protocol": "dns"}], "action": "hijack-dns"},
+     {"ip_is_private": true, "outbound": "direct"},
+     {"clash_mode": "direct", "outbound": "🎯 全球直连"},
+     {"clash_mode": "global", "outbound": "GLOBAL"},
+     {"source_ip_cidr": "192.168.8.0/24", "outbound": "tk01"},
+     {"source_ip_cidr": "192.168.9.0/24", "outbound": "tk02"},
+     {"source_ip_cidr": "192.168.10.0/24", "outbound": "NTT1"},
+     {"source_ip_cidr": "192.168.11.0/24", "outbound": "NTT2"},
+     {"source_ip_cidr": "192.168.12.0/24", "outbound": "NTT3"},
+     {"source_ip_cidr": "192.168.13.0/24", "outbound": "NTT4"},
+     {"domain": ["clash.razord.top", "yacd.metacubex.one", "yacd.haishan.me", "d.metacubex.one"], "outbound": "🎯 全球直连"},
+     {"rule_set": "geosite-private", "outbound": "🎯 全球直连"}
+   ],
+    
+   "rule_set": [
+    { "tag": "DNS-alltype", "type": "remote", "format": "binary", "url": "https://ghfast.top/https://github.com/meiao123/public/raw/refs/heads/main/singbox/rules/DNS-alltype.srs", "download_detour": "🎯 全球直连" }
+   ]
+  },
+  
+  "experimental": {
+    "clash_api": {
+      "external_controller": "0.0.0.0:9095",
+      "external_ui": "/etc/momo/run/ui",
+      "secret": "",
+      "external_ui_download_url": "https://ghfast.top/https://github.com/Zephyruso/zashboard/archive/refs/heads/gh-pages.zip",
+      "external_ui_download_detour": "🎯 全球直连",
+      "default_mode": "rule"
+    },
+  "cache_file": {
+    "enabled": true,
+    "path": "/etc/momo/run/cache.db",
+    "store_fakeip": false
+    }
+  },
+
+  "inbounds": [
+  {
+    "tag": "tun-in",
+    "type": "tun",
+    "address": [
+        "172.19.0.1/30",
+        "fdfe:dcba:9876::1/126"
+    ],
+    "mtu": 1412,
+    "auto_route": true,
+    "auto_redirect": true,
+    "strict_route": true,
+    "stack": "system",
+    "platform": {
+      "http_proxy": {
+        "enabled": true,
+        "server": "127.0.0.1",
+        "server_port": 2080
+      }
+    }
+  },
+  {
+    "type": "mixed",
+    "listen": "127.0.0.1",
+    "listen_port": 2080,
+    "users": []
+  }
+  ],
+
+  "outbounds": [
+    { "tag": "🤖 住宅家宽", "type": "selector", "outbounds": ["{all}"], "filter": [{ "action": "include", "keywords": ["NTT|89|tk"] }] },
+    { "tag": "🐠 漏网之鱼", "type": "selector", "outbounds": ["🤖 住宅家宽","🎯 全球直连"] },
+    { "tag": "GLOBAL", "type": "selector", "outbounds": ["{all}"]},
+    { "tag": "🎯 全球直连", "type": "direct" }
+  ]
+  
+}
