@@ -56,7 +56,7 @@
      {"source_ip_cidr": "192.168.11.0/24", "outbound": "NTT2"},
      {"source_ip_cidr": "192.168.12.0/24", "outbound": "NTT3"},
      {"source_ip_cidr": "192.168.13.0/24", "outbound": "NTT4"},
-     {"domain": ["clash.razord.top", "yacd.metacubex.one", "yacd.haishan.me", "d.metacubex.one"]， "outbound": "🎯 全球直连"},
+     {"domain": ["clash.razord.top", "yacd.metacubex.one", "yacd.haishan.me", "d.metacubex.one"], "outbound": "🎯 全球直连"},
      {"rule_set": "geosite-private", "outbound": "🎯 全球直连"}
    ],
     
