@@ -24,11 +24,11 @@
  "dns":  {
    "servers": 
    [
-     {"tag": "dns_proxy", "type": "udp", "server": "1.1.1.1", "detour": "🚀 节点选择"},
-     {"tag": "chat", "type": "udp", "server": "1.1.1.1", "detour": "🤖 OpenAI"},
-     {"tag": "discord", "type": "udp", "server": "1.1.1.1", "detour": "🐬 discord"},
+     {"tag": "dns_proxy", "type": "udp", "server": "8.8.8.8", "detour": "🚀 节点选择"},
+     {"tag": "chat", "type": "udp", "server": "8.8.8.8", "detour": "🤖 OpenAI"},
+     {"tag": "discord", "type": "udp", "server": "8.8.8.8", "detour": "🐬 discord"},
      {"tag": "DoH", "type": "https", "server": "cloudflare-dns.com", "domain_resolver": "dns_proxy", "detour": "🚀 节点选择"},
-     {"tag": "dns_direct", "type": "udp", "server": "223.5.5.5"}
+     {"tag": "dns_direct", "type": "udp", "server": "192.168.1.171"}
    ],
    "rules": 
    [
