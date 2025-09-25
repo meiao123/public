@@ -9,11 +9,9 @@
    "servers": 
    [
      {"tag": "DoH_tk01", "type": "https", "server": "cloudflare-dns.com", "domain_resolver": "UDP_tk01", "detour": "tk01"},
-     {"tag": "DoH_tk02", "type": "https", "server": "cloudflare-dns.com", "domain_resolver": "UDP_tk02", "detour": "tk02"},
      {"tag": "DoH_au1", "type": "https", "server": "cloudflare-dns.com", "domain_resolver": "UDP_au1", "detour": "au1"},
      {"tag": "DoH_au2", "type": "https", "server": "cloudflare-dns.com", "domain_resolver": "UDP_au2", "detour": "au2"},
      {"tag": "UDP_tk01", "type": "udp", "server": "1.1.1.1", "detour": "tk01"},
-     {"tag": "UDP_tk02", "type": "udp", "server": "1.1.1.1", "detour": "tk02"},
      {"tag": "UDP_au1", "type": "udp", "server": "1.1.1.1", "detour": "au1"},
      {"tag": "UDP_au2", "type": "udp", "server": "1.1.1.1", "detour": "au2"},
      {"tag": "dns_proxy", "type": "udp", "server": "1.1.1.1", "detour": "🐠 漏网之鱼"},
@@ -22,7 +20,7 @@
    "rules": 
    [
      {"source_ip_cidr": "192.168.8.0/24", "server": "DoH_tk01"},
-     {"source_ip_cidr": "192.168.9.0/24", "server": "DoH_tk02"},
+     {"source_ip_cidr": "192.168.9.0/24", "server": "DoH_tk01"},
      {"source_ip_cidr": "192.168.10.0/24", "server": "DoH_au1"},
      {"source_ip_cidr": "192.168.11.0/24", "server": "DoH_au1"},
      {"source_ip_cidr": "192.168.12.0/24", "server": "DoH_au2"},
@@ -47,7 +45,7 @@
      {"clash_mode": "direct", "outbound": "🎯 全球直连"},
      {"clash_mode": "global", "outbound": "GLOBAL"},
      {"source_ip_cidr": "192.168.8.0/24", "outbound": "tk01"},
-     {"source_ip_cidr": "192.168.9.0/24", "outbound": "tk02"},
+     {"source_ip_cidr": "192.168.9.0/24", "outbound": "tk01"},
      {"source_ip_cidr": "192.168.10.0/24", "outbound": "au1"},
      {"source_ip_cidr": "192.168.11.0/24", "outbound": "au1"},
      {"source_ip_cidr": "192.168.12.0/24", "outbound": "au2"},
