@@ -9,11 +9,13 @@
    "servers": 
    [
      {"tag": "DoH_tk01", "type": "https", "server": "cloudflare-dns.com", "domain_resolver": "UDP_tk01", "detour": "tk01"},
-     {"tag": "DoH_au1", "type": "https", "server": "cloudflare-dns.com", "domain_resolver": "UDP_au1", "detour": "au1"},
-     {"tag": "DoH_au2", "type": "https", "server": "cloudflare-dns.com", "domain_resolver": "UDP_au2", "detour": "au2"},
+     {"tag": "DoH_ny1", "type": "https", "server": "cloudflare-dns.com", "domain_resolver": "UDP_ny1", "detour": "ny1"},
+     {"tag": "DoH_ny2", "type": "https", "server": "cloudflare-dns.com", "domain_resolver": "UDP_ny2", "detour": "ny2"},
+     {"tag": "DoH_ny3", "type": "https", "server": "cloudflare-dns.com", "domain_resolver": "UDP_ny3", "detour": "ny3"},
      {"tag": "UDP_tk01", "type": "udp", "server": "1.1.1.1", "detour": "tk01"},
-     {"tag": "UDP_au1", "type": "udp", "server": "1.1.1.1", "detour": "au1"},
-     {"tag": "UDP_au2", "type": "udp", "server": "1.1.1.1", "detour": "au2"},
+     {"tag": "UDP_ny1", "type": "udp", "server": "1.1.1.1", "detour": "ny1"},
+     {"tag": "UDP_ny2", "type": "udp", "server": "1.1.1.1", "detour": "ny2"},
+     {"tag": "UDP_ny3", "type": "udp", "server": "1.1.1.1", "detour": "ny3"},
      {"tag": "dns_proxy", "type": "udp", "server": "1.1.1.1", "detour": "🐠 漏网之鱼"},
      {"tag": "dns_direct", "type": "udp", "server": "211.137.64.163"}
    ],
@@ -21,10 +23,11 @@
    [
      {"source_ip_cidr": "192.168.8.0/24", "server": "DoH_tk01"},
      {"source_ip_cidr": "192.168.9.0/24", "server": "DoH_tk01"},
-     {"source_ip_cidr": "192.168.10.0/24", "server": "DoH_au1"},
-     {"source_ip_cidr": "192.168.11.0/24", "server": "DoH_au1"},
-     {"source_ip_cidr": "192.168.12.0/24", "server": "DoH_au2"},
-     {"source_ip_cidr": "192.168.13.0/24", "server": "DoH_au2"},
+     {"source_ip_cidr": "192.168.10.0/24", "server": "DoH_ny1"},
+     {"source_ip_cidr": "192.168.11.0/24", "server": "DoH_ny1"},
+     {"source_ip_cidr": "192.168.12.0/24", "server": "DoH_ny2"},
+     {"source_ip_cidr": "192.168.13.0/24", "server": "DoH_ny2"},
+     {"source_ip_cidr": "192.168.14.0/24", "server": "DoH_ny3"},
      {"rule_set": "DNS-alltype", "action": "reject"}
    ],
    "final": "dns_proxy",
@@ -46,10 +49,11 @@
      {"clash_mode": "global", "outbound": "GLOBAL"},
      {"source_ip_cidr": "192.168.8.0/24", "outbound": "tk01"},
      {"source_ip_cidr": "192.168.9.0/24", "outbound": "tk01"},
-     {"source_ip_cidr": "192.168.10.0/24", "outbound": "au1"},
-     {"source_ip_cidr": "192.168.11.0/24", "outbound": "au1"},
-     {"source_ip_cidr": "192.168.12.0/24", "outbound": "au2"},
-     {"source_ip_cidr": "192.168.13.0/24", "outbound": "au2"},
+     {"source_ip_cidr": "192.168.10.0/24", "outbound": "ny1"},
+     {"source_ip_cidr": "192.168.11.0/24", "outbound": "ny1"},
+     {"source_ip_cidr": "192.168.12.0/24", "outbound": "ny2"},
+     {"source_ip_cidr": "192.168.13.0/24", "outbound": "ny2"},
+     {"source_ip_cidr": "192.168.14.0/24", "outbound": "ny3"},
      {"domain": ["clash.razord.top", "yacd.metacubex.one", "yacd.haishan.me", "d.metacubex.one"], "outbound": "🎯 全球直连"}
    ],
     
