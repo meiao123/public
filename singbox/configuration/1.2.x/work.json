@@ -28,6 +28,7 @@
      {"source_ip_cidr": "192.168.12.0/24", "server": "DoH_ny2"},
      {"source_ip_cidr": "192.168.13.0/24", "server": "DoH_ny2"},
      {"source_ip_cidr": "192.168.14.0/24", "server": "DoH_ny3"},
+     {"source_ip_cidr": "192.168.15.0/24", "server": "DoH_ny3"},
      {"rule_set": "DNS-alltype", "action": "reject"}
    ],
    "final": "dns_proxy",
@@ -54,6 +55,7 @@
      {"source_ip_cidr": "192.168.12.0/24", "outbound": "ny2"},
      {"source_ip_cidr": "192.168.13.0/24", "outbound": "ny2"},
      {"source_ip_cidr": "192.168.14.0/24", "outbound": "ny3"},
+     {"source_ip_cidr": "192.168.15.0/24", "outbound": "ny3"},
      {"domain": ["clash.razord.top", "yacd.metacubex.one", "yacd.haishan.me", "d.metacubex.one"], "outbound": "🎯 全球直连"}
    ],
     
