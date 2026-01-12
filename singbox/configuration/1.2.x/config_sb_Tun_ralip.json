@@ -138,7 +138,7 @@
      {"ip_cidr": [ "192.168.1.0/24", "127.0.0.1","192.168.10.0/24"], "outbound": "🎯 全球直连"},
      {"domain": ["clash.razord.top", "yacd.metacubex.one", "yacd.haishan.me", "d.metacubex.one"], "outbound": "🎯 全球直连"},
      {"rule_set": "geosite-private", "outbound": "🎯 全球直连"},
-     {"rule_set": "geosite-chat", "outbound": "🤖 OpenAI"},
+     {"rule_set": "geosite-Ai", "outbound": "🤖 OpenAI"},
      {"rule_set": "geosite-youtube", "outbound": "📹 YouTube"},
      {"rule_set": "geosite-github", "outbound": "👨‍💻 Github"},
      {"rule_set": ["geosite-google", "geoip-google"], "outbound": "🍀 Google"},
