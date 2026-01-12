@@ -37,7 +37,7 @@
      {"tag": "telegram", "type": "udp", "server": "8.8.8.8", "detour": "📲 Telegram"},
      {"tag": "Apple", "type": "udp", "server": "8.8.8.8", "detour": "🍏 Apple"},
      {"tag": "DoH", "type": "https", "server": "cloudflare-dns.com", "domain_resolver": "dns_proxy", "detour": "🚀 节点选择"},
-     {"tag": "dns_direct", "type": "udp", "server": "211.137.64.163"}
+     {"tag": "dns_direct", "type": "udp", "server": "211.137.58.20"}
    ],
    "rules": 
    [
