@@ -36,7 +36,6 @@
      {"tag": "netflix", "type": "udp", "server": "8.8.8.8", "detour": "🎥 Netflix"},
      {"tag": "telegram", "type": "udp", "server": "8.8.8.8", "detour": "📲 Telegram"},
      {"tag": "Apple", "type": "udp", "server": "8.8.8.8", "detour": "🍏 Apple"},
-     {"tag": "DoH", "type": "https", "server": "cloudflare-dns.com", "domain_resolver": "dns_proxy", "detour": "🚀 节点选择"},
      {"tag": "dns_direct", "type": "udp", "server": "211.137.58.20"}
    ],
    "rules": 
@@ -56,8 +55,7 @@
      {"rule_set": ["geosite-telegram", "geoip-telegram"],"server": "telegram"},
      {"rule_set": ["geosite-apple", "geoip-apple"],"server": "Apple"},
      {"rule_set": "geosite-cn","server": "dns_direct"},
-     {"rule_set": "geosite-geolocation-!cn", "server": "dns_proxy"},
-     {"query_type": "HTTPS", "server": "DoH"}
+     {"rule_set": "geosite-geolocation-!cn", "server": "dns_proxy"}
    ], 
    "final": "dns_proxy",
    "strategy": "ipv4_only",
