@@ -24,7 +24,7 @@
  "dns":  {
    "servers": 
    [
-     {"tag": "dns_proxy", "type": "udp", "server": "8.8.8.8", "detour": "🚀 节点选择"},
+     {"tag": "dns_proxy", "type": "udp", "server": "1.1.1.1", "detour": "🚀 节点选择"},
      {"tag": "youtube", "type": "udp", "server": "8.8.8.8", "detour": "📹 YouTube"},
      {"tag": "Ai", "type": "udp", "server": "8.8.8.8", "detour": "🤖 OpenAI"},
      {"tag": "google", "type": "udp", "server": "8.8.8.8", "detour": "🍀 Google"},
@@ -59,8 +59,7 @@
    ], 
    "final": "dns_proxy",
    "strategy": "ipv4_only",
-   "independent_cache": true,
-   "reverse_mapping": true
+   "independent_cache": true
 },
 
 "inbounds": [
