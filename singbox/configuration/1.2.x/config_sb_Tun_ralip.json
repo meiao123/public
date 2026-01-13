@@ -25,6 +25,7 @@
    "servers": 
    [
      {"tag": "dns_proxy", "type": "udp", "server": "1.1.1.1", "detour": "🚀 节点选择"},
+     {"tag": "dns_direct", "type": "udp", "server": "211.137.58.20"},
      {"tag": "youtube", "type": "udp", "server": "1.1.1.1", "detour": "📹 YouTube"},
      {"tag": "Ai", "type": "udp", "server": "1.1.1.1", "detour": "🤖 OpenAI"},
      {"tag": "google", "type": "udp", "server": "1.1.1.1", "detour": "🍀 Google"},
@@ -35,14 +36,14 @@
      {"tag": "tiktok", "type": "udp", "server": "1.1.1.1", "detour": "🎵 TikTok"},
      {"tag": "netflix", "type": "udp", "server": "1.1.1.1", "detour": "🎥 Netflix"},
      {"tag": "telegram", "type": "udp", "server": "1.1.1.1", "detour": "📲 Telegram"},
-     {"tag": "Apple", "type": "udp", "server": "1.1.1.1", "detour": "🍏 Apple"},
-     {"tag": "dns_direct", "type": "udp", "server": "211.137.58.20"}
+     {"tag": "Apple", "type": "udp", "server": "1.1.1.1", "detour": "🍏 Apple"}
    ],
    "rules": 
    [
      {"clash_mode": "direct", "server": "dns_direct"},
      {"clash_mode":  "global", "server": "dns_proxy"},
      {"protocol": "ssh","server": "dns_direct"},
+     {"rule_set": "geosite-cn","server": "dns_direct"},
      {"rule_set": "geosite-youtube","server": "youtube"},
      {"rule_set": "geosite-Ai","server": "Ai"},
      {"rule_set": ["geosite-google", "geoip-google"],"server": "google"},
@@ -54,7 +55,6 @@
      {"rule_set": ["geosite-netflix", "geoip-netflix"],"server": "netflix"},
      {"rule_set": ["geosite-telegram", "geoip-telegram"],"server": "telegram"},
      {"rule_set": ["geosite-apple", "geoip-apple"],"server": "Apple"},
-     {"rule_set": "geosite-cn","server": "dns_direct"},
      {"rule_set": "geosite-geolocation-!cn", "server": "dns_proxy"}
    ], 
    "final": "dns_proxy",
