@@ -32,9 +32,9 @@
    [
      {"clash_mode": "direct", "server": "dns_direct"},
      {"clash_mode":  "global", "server": "fakeip"},
+     {"query_type": "HTTPS", "action": "reject"},
      {"domain_suffix": ["services.googleapis.cn", "googleapis.cn", "xn--ngstr-lra8j.com"], "server": "dns_proxy"},
-     {"rule_set": ["geosite-cn", "geosite-steamcn", "geosite-apple"], "server": "dns_direct"},
-     {"protocol": "ssh","server": "dns_direct"},
+     {"rule_set": ["geosite-cn", "geosite-apple"], "server": "dns_direct"},
      {"query_type": ["A", "AAAA"], "server": "fakeip", "rewrite_ttl": 1}
    ], 
    "final": "dns_proxy",
