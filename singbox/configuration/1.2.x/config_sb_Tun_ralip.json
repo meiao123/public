@@ -26,17 +26,9 @@
    [
      {"tag": "dns_proxy", "type": "https", "server": "8.8.8.8", "detour": "🚀 节点选择"},
      {"tag": "dns_direct", "type": "udp", "server": "211.137.58.20"},
-     {"tag": "youtube", "type": "https", "server": "8.8.8.8", "detour": "📹 YouTube"},
      {"tag": "Ai", "type": "https", "server": "8.8.8.8", "detour": "🤖 OpenAI"},
-     {"tag": "google", "type": "https", "server": "8.8.8.8", "detour": "🍀 Google"},
-     {"tag": "github", "type": "https", "server": "8.8.8.8", "detour": "👨‍💻 Github"},
-     {"tag": "discord", "type": "https", "server": "8.8.8.8", "detour": "🐬 discord"},
      {"tag": "mltiple", "type": "https", "server": "8.8.8.8", "detour": "📷 Multiple"},
-     {"tag": "microsoft", "type": "https", "server": "8.8.8.8", "detour": "🪟 Microsoft"},
-     {"tag": "tiktok", "type": "https", "server": "8.8.8.8", "detour": "🎵 TikTok"},
-     {"tag": "netflix", "type": "https", "server": "8.8.8.8", "detour": "🎥 Netflix"},
-     {"tag": "telegram", "type": "https", "server": "8.8.8.8", "detour": "📲 Telegram"},
-     {"tag": "Apple", "type": "https", "server": "8.8.8.8", "detour": "🍏 Apple"}
+     {"tag": "tiktok", "type": "https", "server": "8.8.8.8", "detour": "🎵 TikTok"}
    ],
    "rules": 
    [
@@ -44,17 +36,9 @@
      {"clash_mode":  "global", "server": "dns_proxy"},
      {"query_type": "HTTPS", "action": "reject"},
      {"rule_set": "geosite-cn","server": "dns_direct"},
-     {"rule_set": "geosite-youtube","server": "youtube"},
      {"rule_set": "geosite-Ai","server": "Ai"},
-     {"rule_set": ["geosite-google", "geoip-google"],"server": "google"},
-     {"rule_set": "geosite-github","server": "github"},
-     {"rule_set": "geosite-discord","server": "discord"},
      {"rule_set": ["geosite-instagram","geosite-x","geosite-facebook"],"server": "mltiple"},
-     {"rule_set": "geosite-microsoft","server": "microsoft"},
      {"rule_set": ["geosite-tiktok", "geosite-capcut"],"server": "tiktok"},
-     {"rule_set": ["geosite-netflix", "geoip-netflix"],"server": "netflix"},
-     {"rule_set": ["geosite-telegram", "geoip-telegram"],"server": "telegram"},
-     {"rule_set": ["geosite-apple", "geoip-apple"],"server": "Apple"},
      {"rule_set": "geosite-geolocation-!cn", "server": "dns_proxy"}
    ], 
    "final": "dns_proxy",
