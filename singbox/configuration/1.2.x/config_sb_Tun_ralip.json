@@ -25,7 +25,7 @@
    "servers": 
    [
      {"tag": "dns_proxy", "type": "https", "server": "8.8.8.8", "detour": "🚀 节点选择"},
-     {"tag": "dns_direct", "type": "udp", "server": "211.137.58.20"},
+     {"tag": "dns_direct", "type": "udp", "server": "192.168.1.50"},
      {"tag": "Ai", "type": "https", "server": "8.8.8.8", "detour": "🤖 OpenAI"},
      {"tag": "mltiple", "type": "https", "server": "8.8.8.8", "detour": "📷 Multiple"},
      {"tag": "tiktok", "type": "https", "server": "8.8.8.8", "detour": "🎵 TikTok"}
