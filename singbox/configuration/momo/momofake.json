@@ -111,7 +111,7 @@
       { "tag": "geoip-private", "type": "remote", "format": "binary", "url": "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geoip/private.srs", "download_detour": "🎯 全球直连" }
     ],
     "final": "🐠 漏网之鱼",
-    "default_domain_resolver": {"server": "dns_proxy"}
+    "default_domain_resolver": {"server": "dns_direct"}
   },
   "inbounds": [
     {
