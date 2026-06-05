@@ -1,7 +1,7 @@
 {
   "dns": {
     "servers": [
-      {"tag": "dns_direct", "type": "udp", "server": "211.137.64.163", "server_port": 53},
+      {"tag": "dns_direct", "type": "udp", "server": "211.137.64.163"},
       {"tag": "dns_proxy", "type": "udp", "server": "8.8.8.8", "detour": "🚀 节点选择"},
       {"tag": "fakeip", "type": "fakeip", "inet4_range": "198.18.0.0/15", "inet6_range": "fc00::/18"}
     ],
@@ -15,7 +15,6 @@
       {"query_type": ["A", "AAAA"], "server": "fakeip", "rewrite_ttl": 1}
     ],
     "final": "dns_proxy",
-    "client_subnet": "223.5.5.0/24",
     "strategy": "prefer_ipv4",
     "independent_cache": true,
     "reverse_mapping": true
