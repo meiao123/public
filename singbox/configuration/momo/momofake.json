@@ -2,7 +2,6 @@
   "dns": {
     "servers": [
       {"tag": "dns_direct", "type": "udp", "server": "211.137.64.163", "server_port": 53},
-      {"tag": "public", "type": "https", "server": "dns.alidns.com", "domain_resolver": "local"},
       {"tag": "dns_proxy", "type": "udp", "server": "8.8.8.8", "detour": "🚀 节点选择"},
       {"tag": "fakeip", "type": "fakeip", "inet4_range": "198.18.0.0/15", "inet6_range": "fc00::/18"}
     ],
@@ -112,7 +111,7 @@
       { "tag": "geoip-private", "type": "remote", "format": "binary", "url": "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geoip/private.srs", "download_detour": "🎯 全球直连" }
     ],
     "final": "🐠 漏网之鱼",
-    "default_domain_resolver": {"server": "public"}
+    "default_domain_resolver": {"server": "dns_proxy"}
   },
   "inbounds": [
     {
