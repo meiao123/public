@@ -91,7 +91,7 @@
     { "tag": "🍏 Apple", "type": "selector", "outbounds": ["🎯 全球直连", "🇭🇰 香港节点", "🇸🇬 新加坡节点", "🇯🇵 日本节点", "🇺🇲 美国节点"] },
     { "tag": "🐠 漏网之鱼", "type": "selector", "outbounds": ["🚀 节点选择","🎯 全球直连"] },
     { "tag": "🐸 手动切换", "type": "selector", "outbounds": ["{all}"]},
-    { "tag": "🤖 住宅家宽", "type": "selector", "outbounds": ["{all}"], "filter": [{ "action": "include", "keywords": ["cn2|ny|tk|NTT"] }] },
+    { "tag": "🤖 住宅家宽", "type": "selector", "outbounds": ["{all}"], "filter": [{ "action": "include", "keywords": ["cn2|kr|spanish|ny|tk|NTT"] }] },
     { "tag": "🇭🇰 香港节点", "type": "selector", "outbounds": ["{all}"], "filter": [{ "action": "include", "keywords": ["🇭🇰|HK|hk|香港|港|HongKong"] }] },
     { "tag": "🇸🇬 新加坡节点", "type": "selector", "outbounds": ["{all}"], "filter": [{ "action": "include", "keywords": ["新加坡|坡|狮城|SG|Singapore"] }] },
     { "tag": "🇯🇵 日本节点", "type": "selector", "outbounds": ["{all}"], "filter": [{ "action": "include", "keywords": ["🇯🇵|JP|jp|日本|日|Japan"] }, { "action": "exclude", "keywords": ["尼日|38|89|月"] }] },
