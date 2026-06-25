@@ -70,7 +70,7 @@
    ],
     
    "rule_set": [
-    { "tag": "DNS-alltype", "type": "remote", "format": "binary", "url": "https://ghfast.top/https://github.com/meiao123/public/raw/refs/heads/main/singbox/rules/DNS-alltype.srs", "download_detour": "🎯 全球直连" }
+    { "tag": "DNS-alltype", "type": "remote", "format": "binary", "url": "https://github.com/meiao123/public/raw/refs/heads/main/singbox/rules/DNS-alltype.srs", "download_detour": "kr1" }
    ]
   },
   
