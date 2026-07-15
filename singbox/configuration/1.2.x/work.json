@@ -16,7 +16,7 @@
      {"tag": "DoH_vless-ny3", "type": "https", "server": "cloudflare-dns.com", "domain_resolver": "UDP_vless-ny3", "detour": "vless-ny3"},
      {"tag": "DoH_vless-ny3.2", "type": "https", "server": "cloudflare-dns.com", "domain_resolver": "UDP_vless-ny3.2", "detour": "vless-ny3.2"},
      
-     {"tag": "UDP_vless-7p", "type": "udp", "server": "8.8.8.8", "detour": "vless-7p"},
+     {"tag": "UDP_vless-7p", "type": "udp", "server": "1.1.1.1", "detour": "vless-7p"},
      {"tag": "UDP_vless-ny1", "type": "udp", "server": "1.1.1.1", "detour": "vless-ny1"},
      {"tag": "UDP_vless-ny1.2", "type": "udp", "server": "1.1.1.1", "detour": "vless-ny1.2"},
      {"tag": "UDP_vless-ny2", "type": "udp", "server": "1.1.1.1", "detour": "vless-ny2"},
@@ -29,7 +29,7 @@
    ],
    "rules": 
    [
-     {"source_ip_cidr": "192.168.8.0/24", "server": "UDP_vless-7p"},
+     {"source_ip_cidr": "192.168.8.0/24", "server": "dns_proxy"},
      {"source_ip_cidr": "192.168.9.0/24", "server": "DoH_vless-ny1"},
      {"source_ip_cidr": "192.168.10.0/24", "server": "DoH_vless-ny1.2"},
      {"source_ip_cidr": "192.168.11.0/24", "server": "DoH_vless-ny2"},
