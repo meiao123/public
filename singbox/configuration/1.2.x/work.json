@@ -40,8 +40,7 @@
      {"rule_set": "DNS-alltype", "action": "reject"}
    ],
    "final": "dns_proxy",
-   "strategy": "ipv4_only",
-   "independent_cache": true
+   "strategy": "ipv4_only"
   },
 
   "route": 
