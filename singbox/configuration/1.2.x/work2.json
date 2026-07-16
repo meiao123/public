@@ -1,0 +1,118 @@
+{
+  "log": {
+    "disabled": false,
+    "level": "info",
+    "timestamp": true
+  },
+
+  "dns":  {
+   "servers": 
+   [
+     {"tag": "DoH_vless-7p", "type": "https", "server": "1.1.1.1", "tls": {"server_name": "cloudflare-dns.com"}, "detour": "vless-7p"},
+     {"tag": "DoH_vless-ny1", "type": "https", "server": "1.1.1.1", "tls": {"server_name": "cloudflare-dns.com"},  "detour": "vless-ny1"},
+     {"tag": "DoH_vless-ny2", "type": "https", "server": "1.1.1.1", "tls": {"server_name": "cloudflare-dns.com"},  "detour": "vless-ny2"},
+     {"tag": "DoH_vless-ny3", "type": "https", "server": "1.1.1.1", "tls": {"server_name": "cloudflare-dns.com"},  "detour": "vless-ny3"},
+     {"tag": "DoH_vless-ny1.2", "type": "https", "server": "1.1.1.1", "tls": {"server_name": "cloudflare-dns.com"},  "detour": "vless-ny1.2"},
+     {"tag": "DoH_vless-ny2.2", "type": "https", "server": "1.1.1.1", "tls": {"server_name": "cloudflare-dns.com"},  "detour": "vless-ny2.2"},
+     {"tag": "DoH_vless-ny3.2", "type": "https", "server": "1.1.1.1", "tls": {"server_name": "cloudflare-dns.com"},  "detour": "vless-ny3.2"},
+     
+     {"tag": "dns_proxy", "type": "udp", "server": "1.1.1.1", "detour": "🐠 漏网之鱼"},
+     {"tag": "dns_direct", "type": "udp", "server": "211.137.64.163"}
+   ],
+   "rules": 
+   [
+     {"source_ip_cidr": "192.168.8.0/24", "server": "DoH_vless-7p"},
+     {"source_ip_cidr": "192.168.9.0/24", "server": "DoH_vless-ny1"},
+     {"source_ip_cidr": "192.168.10.0/24", "server": "DoH_vless-ny2"},
+     {"source_ip_cidr": "192.168.11.0/24", "server": "DoH_vless-ny3"},
+     {"source_ip_cidr": "192.168.12.0/24", "server": "DoH_vless-ny1.2"},
+     {"source_ip_cidr": "192.168.13.0/24", "server": "DoH_vless-ny2.2"},
+     {"source_ip_cidr": "192.168.14.0/24", "server": "DoH_vless-ny3.2"},
+     {"source_ip_cidr": "192.168.15.0/24", "server": "dns_direct"},
+     {"rule_set": "DNS-alltype", "action": "reject"}
+   ],
+   "final": "dns_proxy",
+   "strategy": "ipv4_only"
+  },
+
+  "route": 
+  {
+   "auto_detect_interface": true,
+   "default_domain_resolver": {"server": "dns_direct"},
+   "final": "🐠 漏网之鱼",
+   "rules": 
+   [
+     {"action": "sniff"},
+     {"type": "logical", "mode": "or", "rules": [{"port": 53}, {"protocol": "dns"}], "action": "hijack-dns"},
+     {"ip_is_private": true, "outbound": "🎯 全球直连"},
+     {"clash_mode": "direct", "outbound": "🎯 全球直连"},
+     {"clash_mode": "global", "outbound": "GLOBAL"},
+     {"source_ip_cidr": "192.168.8.0/24", "outbound": "vless-7p"},
+     {"source_ip_cidr": "192.168.9.0/24", "outbound": "vless-ny1"},
+     {"source_ip_cidr": "192.168.10.0/24", "outbound": "vless-ny2"},
+     {"source_ip_cidr": "192.168.11.0/24", "outbound": "vless-ny3"},
+     {"source_ip_cidr": "192.168.12.0/24", "outbound": "vless-ny1.2"},
+     {"source_ip_cidr": "192.168.13.0/24", "outbound": "vless-ny2.2"},
+     {"source_ip_cidr": "192.168.14.0/24", "outbound": "vless-ny3.2"},
+     {"source_ip_cidr": "192.168.15.0/24", "outbound": "🎯 全球直连"},
+     {"domain": ["clash.razord.top", "yacd.metacubex.one", "yacd.haishan.me", "d.metacubex.one"], "outbound": "🎯 全球直连"}
+   ],
+    
+   "rule_set": [
+    { "tag": "DNS-alltype", "type": "remote", "format": "binary", "url": "https://ghfast.top/https://github.com/meiao123/public/raw/refs/heads/main/singbox/rules/DNS-alltype.srs", "download_detour": "🎯 全球直连" }
+   ]
+  },
+  
+  "experimental": {
+    "clash_api": {
+      "external_controller": "0.0.0.0:9095",
+      "external_ui": "/etc/sing-box/ui",
+      "secret": "",
+      "external_ui_download_url": "https://ghfast.top/https://github.com/Zephyruso/zashboard/archive/refs/heads/gh-pages.zip",
+      "external_ui_download_detour": "🎯 全球直连",
+      "default_mode": "rule"
+    },
+  "cache_file": {
+    "enabled": true,
+    "path": "/etc/sing-box/cache.db",
+    "store_fakeip": false
+    }
+  },
+
+  "inbounds": [
+  {
+    "tag": "tun-in",
+    "type": "tun",
+    "address": [
+        "172.19.0.1/30",
+        "fdfe:dcba:9876::1/126"
+    ],
+    "mtu": 1412,
+    "auto_route": true,
+    "auto_redirect": true,
+    "strict_route": true,
+    "stack": "system",
+    "platform": {
+      "http_proxy": {
+        "enabled": true,
+        "server": "127.0.0.1",
+        "server_port": 2080
+      }
+    }
+  },
+  {
+    "type": "mixed",
+    "listen": "127.0.0.1",
+    "listen_port": 2080,
+    "users": []
+  }
+  ],
+
+  "outbounds": [
+    { "tag": "🤖 住宅家宽", "type": "selector", "outbounds": ["{all}"]},
+    { "tag": "🐠 漏网之鱼", "type": "selector", "outbounds": ["🤖 住宅家宽","🎯 全球直连"] },
+    { "tag": "GLOBAL", "type": "selector", "outbounds": ["{all}"]},
+    { "tag": "🎯 全球直连", "type": "direct" }
+  ]
+  
+}
