@@ -10,10 +10,10 @@
    [
      {"tag": "DoH_vless-7p", "type": "https", "server": "cloudflare-dns.com", "domain_resolver": "UDP_vless-7p", "detour": "vless-7p"},
      {"tag": "DoH_vless-ny1", "type": "https", "server": "cloudflare-dns.com", "domain_resolver": "UDP_vless-ny1", "detour": "vless-ny1"},
-     {"tag": "DoH_vless-ny2", "type": "https", "server": "cloudflare-dns.com", "domain_resolver": "UDP_vless-ny1.2", "detour": "vless-ny2"},
-     {"tag": "DoH_vless-ny3", "type": "https", "server": "cloudflare-dns.com", "domain_resolver": "UDP_vless-ny2", "detour": "vless-ny3"},
-     {"tag": "DoH_vless-ny1.2", "type": "https", "server": "cloudflare-dns.com", "domain_resolver": "UDP_vless-ny2.2", "detour": "vless-ny1.2"},
-     {"tag": "DoH_vless-ny2.2", "type": "https", "server": "cloudflare-dns.com", "domain_resolver": "UDP_vless-ny3", "detour": "vless-ny2.2"},
+     {"tag": "DoH_vless-ny2", "type": "https", "server": "cloudflare-dns.com", "domain_resolver": "UDP_vless-ny2", "detour": "vless-ny2"},
+     {"tag": "DoH_vless-ny3", "type": "https", "server": "cloudflare-dns.com", "domain_resolver": "UDP_vless-ny3", "detour": "vless-ny3"},
+     {"tag": "DoH_vless-ny1.2", "type": "https", "server": "cloudflare-dns.com", "domain_resolver": "UDP_vless-ny1.2", "detour": "vless-ny1.2"},
+     {"tag": "DoH_vless-ny2.2", "type": "https", "server": "cloudflare-dns.com", "domain_resolver": "UDP_vless-ny2.2", "detour": "vless-ny2.2"},
      {"tag": "DoH_vless-ny3.2", "type": "https", "server": "cloudflare-dns.com", "domain_resolver": "UDP_vless-ny3.2", "detour": "vless-ny3.2"},
      
      {"tag": "UDP_vless-7p", "type": "udp", "server": "1.1.1.1", "detour": "vless-7p"},
