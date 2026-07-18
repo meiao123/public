@@ -114,7 +114,7 @@
      {"clash_mode": "global", "outbound": "GLOBAL"},
      {"ip_cidr": [ "192.168.1.0/24", "127.0.0.1","192.168.10.0/24"], "outbound": "🎯 全球直连"},
      {"source_ip_cidr": [ "192.168.6.106","192.168.6.239"], "outbound": "🎯 全球直连"},
-     {"domain": ["clash.razord.top", "yacd.metacubex.one", "yacd.haishan.me", "d.metacubex.one"], "outbound": "🎯 全球直连"},
+     {"domain": ["clash.razord.top", "yacd.metacubex.one", "yacd.haishan.me", "d.metacubex.one", "new.text-to-speech.cn"], "outbound": "🎯 全球直连"},
      {"domain_keyword": "macaron", "outbound": "🤖 OpenAI"},
      {"rule_set": "geosite-private", "outbound": "🎯 全球直连"},
      {"rule_set": "geosite-steamcn", "outbound": "🎯 全球直连"},
