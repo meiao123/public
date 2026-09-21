@@ -76,7 +76,6 @@
       "external_controller": "0.0.0.0:9095",
       "external_ui": "/etc/sing-box/ui",
       "secret": "",
-      "external_ui_download_url": "https://github.com/Zephyruso/zashboard/releases/download/v3.28.0/dist-cdn-fonts.zip",
       "external_ui_download_detour": "🎯 全球直连",
       "default_mode": "rule"
     },
