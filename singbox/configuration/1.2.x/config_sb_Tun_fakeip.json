@@ -1,4 +1,5 @@
 {
+  "$schema": "https://sing-box.sagernet.org/schema.json",
   "log": {
     "disabled": false,
     "level": "info",
@@ -12,7 +13,7 @@
       "secret": "",
       "external_ui_download_url": "https://github.com/Zephyruso/zashboard/releases/download/v3.28.0/dist-cdn-fonts.zip",
       "external_ui_download_detour": "🎯 全球直连",
-      "default_mode": "rule"
+      "default_mode": "Rule"
     },
   "cache_file": {
     "enabled": true,
@@ -24,21 +25,26 @@
  "dns":  {
    "servers": 
    [
+     {"tag": "local", "type": "local", "prefer_go": true},
      {"tag": "dns_proxy", "type": "udp", "server": "8.8.8.8", "detour": "🚀 节点选择"},
      {"tag": "dns_direct", "type": "udp", "server": "223.5.5.5", "server_port": 53},
      {"tag": "fakeip", "type": "fakeip", "inet4_range": "198.18.0.0/15", "inet6_range": "fc00::/18"}
    ],
    "rules": 
    [
-     {"clash_mode": "direct", "server": "dns_direct"},
-     {"clash_mode":  "global", "server": "dns_proxy"},
-     {"query_type": "HTTPS", "action": "reject"},
+     {"query_type": ["HTTPS", "SVCB"], "action": "reject"},
+     {"clash_mode": "Direct", "server": "dns_direct"},
+     {"clash_mode":  "Global", "server": "dns_proxy"},
      {"domain_suffix": ["services.googleapis.cn", "googleapis.cn", "xn--ngstr-lra8j.com"], "server": "dns_proxy"},
      {"rule_set": ["geosite-cn", "geosite-apple"], "server": "dns_direct"},
+     {"type": "logical", "mode": "and", "rules": [{"query_type": ["A", "AAAA"]}, {"rule_set": "geosite-geolocation-!cn", "invert": true}], "action": "evaluate", "server": "google", "client_subnet": "223.5.5.0/24","timeout": "2s"},
+     {"match_response": true, "rule_set": "geoip-cn", "server": "dns_direct"},
      {"query_type": ["A", "AAAA"], "server": "fakeip", "rewrite_ttl": 1}
    ], 
    "final": "dns_proxy",
    "strategy": "ipv4_only",
+   "cache_capacity": 8192,
+   "optimistic": {"enabled": true},
    "reverse_mapping": true
 },
 
@@ -53,15 +59,7 @@
     "mtu": 1412,
     "auto_route": true,
     "auto_redirect": true,
-    "strict_route": true,
-    "stack": "system",
-    "platform": {
-      "http_proxy": {
-        "enabled": true,
-        "server": "127.0.0.1",
-        "server_port": 2080
-      }
-    }
+    "strict_route": true
   },
   {
     "type": "mixed",
@@ -98,21 +96,27 @@
     { "tag": "GLOBAL", "type": "selector", "outbounds": ["{all}"]},
     { "tag": "🎯 全球直连", "type": "direct" }
   ],
-  
+  "http_clients": [
+    {"tag": "直连下载", "detour": "直连"}
+  ],
   "route": 
  {
    "auto_detect_interface": true,
+   "default_http_client": "直连下载",
    "default_domain_resolver": {"server": "dns_direct"},
    "final": "🐠 漏网之鱼",
    "rules": 
    [
-     {"action": "sniff", "sniffer": ["http", "tls", "quic", "dns"]},
+     {"type": "logical", "mode": "and", "rules": [{"port": [53, 853], "invert": true}, {"clash_mode": "Global", "invert": true}, {"type": "logical", "mode": "or", "rules": [{"ip_is_private": true}, {"rule_set": "geoip-cn"}]}], "action": "bypass"},
+     {"type": "logical", "mode": "or", "rules": [{"domain_suffix": "push.apple.com"}, {"rule_set": "geoip-telegram"}], "invert": true, "action": "sniff", "sniffer": ["http", "tls", "stun", "quic", "dns"], "timeout": "100ms"},
      {"type": "logical", "mode": "or", "rules": [{"port": 53}, {"protocol": "dns"}], "action": "hijack-dns"},
+     {"type": "logical", "mode": "or", "rules": [{"port": 853}, {"protocol": ["stun", "quic"]}], "action": "reject", "no_drop": true},
      {"ip_is_private": true, "outbound": "🎯 全球直连"},
      {"protocol": "ssh", "outbound": "🎯 全球直连"},
-     {"clash_mode": "direct", "outbound": "🎯 全球直连"},
-     {"clash_mode": "global", "outbound": "GLOBAL"},
-     {"ip_cidr": [ "192.168.1.0/24", "127.0.0.1","192.168.10.0/24"], "outbound": "🎯 全球直连"},
+     {"network": "icmp", "action": "resolve"},
+     {"network": "icmp", "outbound": "🎯 全球直连"},
+     {"clash_mode": "Direct", "outbound": "🎯 全球直连"},
+     {"clash_mode": "Global", "outbound": "GLOBAL"},
      {"source_ip_cidr": [ "192.168.6.106","192.168.6.239"], "outbound": "🎯 全球直连"},
      {"domain": ["clash.razord.top", "yacd.metacubex.one", "yacd.haishan.me", "d.metacubex.one", "new.text-to-speech.cn"], "outbound": "🎯 全球直连"},
      {"domain_keyword": "macaron", "outbound": "🤖 OpenAI"},
