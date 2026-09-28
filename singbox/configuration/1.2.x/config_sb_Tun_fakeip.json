@@ -5,6 +5,19 @@
     "level": "info",
     "timestamp": true
   },
+
+  "services": [
+    {
+      "type": "api",
+      "listen": "0.0.0.0",
+      "listen_port": 9090,
+      "secret": "passwd",
+      "dashboard": {
+        "enabled": true,
+        "path": "/etc/sing-box/dashboard"
+      }
+    }
+  ],
   
   "experimental": {
     "clash_api": {
@@ -28,7 +41,7 @@
      {"tag": "local", "type": "local", "prefer_go": true},
      {"tag": "dns_proxy", "type": "udp", "server": "8.8.8.8", "detour": "🚀 节点选择"},
      {"tag": "dns_direct", "type": "udp", "server": "223.5.5.5", "server_port": 53},
-     {"tag": "fakeip", "type": "fakeip", "inet4_range": "198.18.0.0/15", "inet6_range": "fc00::/18"}
+     {"tag": "fakeip", "type": "fakeip", "inet4_range": "198.18.0.0/15"}
    ],
    "rules": 
    [
@@ -37,7 +50,6 @@
      {"clash_mode":  "Global", "server": "dns_proxy"},
      {"domain_suffix": ["services.googleapis.cn", "googleapis.cn", "xn--ngstr-lra8j.com"], "server": "dns_proxy"},
      {"rule_set": ["geosite-cn", "geosite-apple"], "server": "dns_direct"},
-     {"type": "logical", "mode": "and", "rules": [{"query_type": ["A", "AAAA"]}, {"rule_set": "geosite-geolocation-!cn", "invert": true}], "action": "evaluate", "server": "google", "client_subnet": "223.5.5.0/24","timeout": "2s"},
      {"match_response": true, "rule_set": "geoip-cn", "server": "dns_direct"},
      {"query_type": ["A", "AAAA"], "server": "fakeip", "rewrite_ttl": 1}
    ], 
@@ -53,8 +65,7 @@
     "tag": "tun-in",
     "type": "tun",
     "address": [
-        "172.19.0.1/30",
-        "fdfe:dcba:9876::1/126"
+        "172.19.0.1/30"
       ],
     "mtu": 1412,
     "auto_route": true,
@@ -62,6 +73,7 @@
     "strict_route": true
   },
   {
+    "tag": "mixed-in",
     "type": "mixed",
     "listen": "127.0.0.1",
     "listen_port": 2080,
@@ -96,9 +108,11 @@
     { "tag": "GLOBAL", "type": "selector", "outbounds": ["{all}"]},
     { "tag": "🎯 全球直连", "type": "direct" }
   ],
+  
   "http_clients": [
     {"tag": "直连下载", "detour": "🎯 全球直连"}
   ],
+  
   "route": 
  {
    "auto_detect_interface": true,
@@ -138,7 +152,7 @@
      {"rule_set": "geosite-microsoft", "outbound": "🪟 Microsoft"},
      {"rule_set": "geosite-geolocation-!cn", "outbound": "🚀 节点选择"},
      {"rule_set": ["geosite-cn"], "outbound": "🎯 全球直连"},
-     {"action": "resolve"},
+     {"inbound": "mixed-in", "action": "resolve"},
      {"rule_set": "geoip-google", "outbound": "🍀 Google"},
      {"rule_set": "geoip-apple", "outbound": "🍏 Apple"},
      {"rule_set": "geoip-telegram", "outbound": "📲 Telegram"},
