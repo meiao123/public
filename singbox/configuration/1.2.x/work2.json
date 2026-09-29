@@ -1,9 +1,31 @@
 {
+  "$schema": "https://sing-box.sagernet.org/schema.json",
   "log": {
     "disabled": false,
     "level": "info",
     "timestamp": true
   },
+
+  "experimental": {
+    "cache_file": {
+      "enabled": true,
+      "path": "/etc/sing-box/cache.db",
+      "store_dns": true
+    }
+  },
+
+  "services": [
+    {
+      "type": "api",
+      "listen": "0.0.0.0",
+      "listen_port": 9090,
+      "secret": "",
+      "dashboard": {
+        "enabled": true,
+        "path": "/etc/sing-box/dashboard"
+      }
+    }
+  ],
 
   "dns":  {
    "servers": 
@@ -17,7 +39,7 @@
      {"tag": "DoH_vless-ny3.2", "type": "https", "server": "1.1.1.1", "tls": {"server_name": "cloudflare-dns.com"},  "detour": "vless-ny3.2"},
      
      {"tag": "dns_proxy", "type": "udp", "server": "1.1.1.1", "detour": "🐠 漏网之鱼"},
-     {"tag": "dns_direct", "type": "udp", "server": "223.5.5.5"}
+     {"tag": "dns_direct", "type": "udp", "server": "223.5.5.5", "server_port": 53}
    ],
    "rules": 
    [
@@ -32,21 +54,31 @@
      {"rule_set": "DNS-alltype", "action": "reject"}
    ],
    "final": "dns_proxy",
-   "strategy": "ipv4_only"
+   "cache_capacity": 8192,
+   "optimistic": {"enabled": true},
+   "strategy": "ipv4_only",
+   "reverse_mapping": true
   },
+
+  "http_clients": [
+    {"tag": "代理下载", "detour": "🤖 住宅家宽"}
+  ],
 
   "route": 
   {
    "auto_detect_interface": true,
+    "default_http_client": "代理下载",
    "default_domain_resolver": {"server": "dns_direct"},
    "final": "🐠 漏网之鱼",
    "rules": 
    [
-     {"action": "sniff"},
+     {"type": "logical", "mode": "and", "rules": [{"port": [53, 853], "invert": true}, {"clash_mode": "Global", "invert": true}, {"type": "logical", "mode": "or", "rules": [{"ip_is_private": true}, {"rule_set": "geoip-cn"}]}], "action": "bypass"},
+     {"type": "logical", "mode": "or", "rules": [{"domain_suffix": "push.apple.com"}, {"rule_set": "geoip-telegram"}], "invert": true, "action": "sniff", "sniffer": ["http", "tls", "stun", "quic", "dns"], "timeout": "100ms"},
      {"type": "logical", "mode": "or", "rules": [{"port": 53}, {"protocol": "dns"}], "action": "hijack-dns"},
+     {"type": "logical", "mode": "or", "rules": [{"port": 853}, {"protocol": ["stun", "quic"]}], "action": "reject", "no_drop": true},
      {"ip_is_private": true, "outbound": "🎯 全球直连"},
-     {"clash_mode": "direct", "outbound": "🎯 全球直连"},
-     {"clash_mode": "global", "outbound": "GLOBAL"},
+     {"clash_mode": "Direct", "outbound": "🎯 全球直连"},
+     {"clash_mode": "Global", "outbound": "GLOBAL"},
      {"source_ip_cidr": "192.168.8.0/24", "outbound": "vless-7p"},
      {"source_ip_cidr": "192.168.9.0/24", "outbound": "vless-ny1"},
      {"source_ip_cidr": "192.168.10.0/24", "outbound": "vless-ny2"},
@@ -54,29 +86,12 @@
      {"source_ip_cidr": "192.168.12.0/24", "outbound": "vless-ny1.2"},
      {"source_ip_cidr": "192.168.13.0/24", "outbound": "vless-ny2.2"},
      {"source_ip_cidr": "192.168.14.0/24", "outbound": "vless-ny3.2"},
-     {"source_ip_cidr": "192.168.15.0/24", "outbound": "🎯 全球直连"},
-     {"domain": ["clash.razord.top", "yacd.metacubex.one", "yacd.haishan.me", "d.metacubex.one"], "outbound": "🎯 全球直连"}
+     {"source_ip_cidr": "192.168.15.0/24", "outbound": "🎯 全球直连"}
    ],
     
    "rule_set": [
-    { "tag": "DNS-alltype", "type": "remote", "format": "binary", "url": "https://ghfast.top/https://github.com/meiao123/public/raw/refs/heads/main/singbox/rules/DNS-alltype.srs", "download_detour": "🎯 全球直连" }
+    { "tag": "DNS-alltype", "type": "remote", "format": "binary", "url": "https://ghfast.top/https://github.com/meiao123/public/raw/refs/heads/main/singbox/rules/DNS-alltype.srs"}
    ]
-  },
-  
-  "experimental": {
-    "clash_api": {
-      "external_controller": "0.0.0.0:9095",
-      "external_ui": "/etc/sing-box/ui",
-      "secret": "",
-      "external_ui_download_url": "https://github.com/Zephyruso/zashboard/releases/download/v3.28.0/dist-cdn-fonts.zip",
-      "external_ui_download_detour": "🎯 全球直连",
-      "default_mode": "rule"
-    },
-  "cache_file": {
-    "enabled": true,
-    "path": "/etc/sing-box/cache.db",
-    "store_fakeip": false
-    }
   },
 
   "inbounds": [
@@ -84,23 +99,15 @@
     "tag": "tun-in",
     "type": "tun",
     "address": [
-        "172.19.0.1/30",
-        "fdfe:dcba:9876::1/126"
+        "172.19.0.1/30"
     ],
     "mtu": 1412,
     "auto_route": true,
     "auto_redirect": true,
-    "strict_route": true,
-    "stack": "system",
-    "platform": {
-      "http_proxy": {
-        "enabled": true,
-        "server": "127.0.0.1",
-        "server_port": 2080
-      }
-    }
+    "strict_route": true
   },
   {
+    "tag": "mixed-in",
     "type": "mixed",
     "listen": "127.0.0.1",
     "listen_port": 2080,
