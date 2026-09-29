@@ -101,13 +101,13 @@
   ],
   
   "http_clients": [
-    {"tag": "直连下载", "detour": "🎯 全球直连"}
+    {"tag": "代理下载", "detour": "🚀 节点选择"}
   ],
   
   "route": 
  {
    "auto_detect_interface": true,
-   "default_http_client": "直连下载",
+   "default_http_client": "代理下载",
    "default_domain_resolver": {"server": "dns_direct"},
    "final": "🐠 漏网之鱼",
    "rules": 
