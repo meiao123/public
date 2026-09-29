@@ -40,7 +40,7 @@
      {"query_type": ["HTTPS", "SVCB"], "action": "reject"},
      {"clash_mode": "Direct", "server": "dns_direct"},
      {"clash_mode":  "Global", "server": "dns_proxy"},
-     {"domain_suffix": ["services.googleapis.cn", "googleapis.cn", "xn--ngstr-lra8j.com"], "server": "dns_proxy"},
+     {"domain_suffix": ["services.googleapis.cn", "googleapis.cn", "xn--ngstr-lra8j.com", "docker.io", "docker.com", "dockerusercontent.com", "registry-1.docker.io", "auth.docker.io"], "server": "dns_proxy"},
      {"rule_set": ["geosite-cn", "geosite-apple"], "server": "dns_direct"},
      {"query_type": ["A", "AAAA"], "server": "fakeip", "rewrite_ttl": 1}
    ], 
