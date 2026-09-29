@@ -69,7 +69,7 @@
   },
 
   "http_clients": [
-    {"tag": "代理下载", "detour": "🚀 节点选择"}
+    {"tag": "代理下载", "detour": "🤖 住宅家宽"}
   ],
 
   "route": 
@@ -85,7 +85,7 @@
      {"type": "logical", "mode": "or", "rules": [{"port": 53}, {"protocol": "dns"}], "action": "hijack-dns"},
      {"type": "logical", "mode": "or", "rules": [{"port": 853}, {"protocol": ["stun", "quic"]}], "action": "reject", "no_drop": true},
      {"ip_is_private": true, "outbound": "🎯 全球直连"},
-     {"clash_mode": "Direct", "outbound": "直连"},
+     {"clash_mode": "Direct", "outbound": "🎯 全球直连"},
      {"clash_mode": "Global", "outbound": "GLOBAL"},
      {"source_ip_cidr": "192.168.8.0/24", "outbound": "vless-7p"},
      {"source_ip_cidr": "192.168.9.0/24", "outbound": "vless-ny1"},
