@@ -87,7 +87,7 @@
      {"source_ip_cidr": "192.168.13.0/24", "outbound": "vless-ny2.2"},
      {"source_ip_cidr": "192.168.14.0/24", "outbound": "vless-ny3.2"},
      {"source_ip_cidr": "192.168.15.0/24", "outbound": "🎯 全球直连"}
-   ]，
+   ],
     
    "rule_set": [
     { "tag": "DNS-alltype", "type": "remote", "format": "binary", "url": "https://ghfast.top/https://github.com/meiao123/public/raw/refs/heads/main/singbox/rules/DNS-alltype.srs"}
