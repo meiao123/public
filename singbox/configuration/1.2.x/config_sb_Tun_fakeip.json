@@ -118,8 +118,6 @@
      {"type": "logical", "mode": "or", "rules": [{"port": 853}, {"protocol": ["stun", "quic"]}], "action": "reject", "no_drop": true},
      {"ip_is_private": true, "outbound": "🎯 全球直连"},
      {"protocol": "ssh", "outbound": "🎯 全球直连"},
-     {"network": "icmp", "action": "resolve"},
-     {"network": "icmp", "outbound": "🎯 全球直连"},
      {"clash_mode": "Direct", "outbound": "🎯 全球直连"},
      {"clash_mode": "Global", "outbound": "GLOBAL"},
      {"source_ip_cidr": [ "192.168.6.106","192.168.6.239"], "outbound": "🎯 全球直连"},
