@@ -98,9 +98,7 @@
   "tag": "tproxy-in",
   "type": "tproxy",
   "listen": "0.0.0.0",
-  "listen_port": 7895,
-  "network": "tcp,udp",
-  "udp_timeout": "5m"
+  "listen_port": 7895
   }
   ],
 
