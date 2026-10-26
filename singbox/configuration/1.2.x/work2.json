@@ -89,7 +89,7 @@
      {"source_ip_cidr": "192.168.13.0/24", "outbound": "vless-ny2.2"},
      {"source_ip_cidr": "192.168.14.0/24", "outbound": "vless-ny3.2"},
      {"source_ip_cidr": "192.168.15.0/24", "outbound": "cn2gia"},
-     {"source_ip_cidr": "192.168.100.0/24", "outbound": "cn2gia"},
+     {"source_ip_cidr": "192.168.100.0/24", "outbound": "cn2gia"}
    ],
     
    "rule_set": [
