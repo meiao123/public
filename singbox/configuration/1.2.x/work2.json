@@ -37,6 +37,7 @@
      {"tag": "DoH_vless-ny1.2", "type": "https", "server": "1.1.1.1", "tls": {"server_name": "cloudflare-dns.com"},  "detour": "vless-ny1.2"},
      {"tag": "DoH_vless-ny2.2", "type": "https", "server": "1.1.1.1", "tls": {"server_name": "cloudflare-dns.com"},  "detour": "vless-ny2.2"},
      {"tag": "DoH_vless-ny3.2", "type": "https", "server": "1.1.1.1", "tls": {"server_name": "cloudflare-dns.com"},  "detour": "vless-ny3.2"},
+     {"tag": "DoH_vless-cn2gia", "type": "https", "server": "1.1.1.1", "tls": {"server_name": "cloudflare-dns.com"},  "detour": "cn2gia"},
      
      {"tag": "dns_proxy", "type": "udp", "server": "1.1.1.1", "detour": "🐠 漏网之鱼"},
      {"tag": "dns_direct", "type": "udp", "server": "223.5.5.5", "server_port": 53}
@@ -50,7 +51,7 @@
      {"source_ip_cidr": "192.168.12.0/24", "server": "DoH_vless-ny1.2"},
      {"source_ip_cidr": "192.168.13.0/24", "server": "DoH_vless-ny2.2"},
      {"source_ip_cidr": "192.168.14.0/24", "server": "DoH_vless-ny3.2"},
-     {"source_ip_cidr": "192.168.15.0/24", "server": "dns_direct"},
+     {"source_ip_cidr": "192.168.15.0/24", "server": "DoH_vless-cn2gia"},
      {"rule_set": "DNS-alltype", "action": "reject"}
    ],
    "final": "dns_proxy",
@@ -86,7 +87,7 @@
      {"source_ip_cidr": "192.168.12.0/24", "outbound": "vless-ny1.2"},
      {"source_ip_cidr": "192.168.13.0/24", "outbound": "vless-ny2.2"},
      {"source_ip_cidr": "192.168.14.0/24", "outbound": "vless-ny3.2"},
-     {"source_ip_cidr": "192.168.15.0/24", "outbound": "🎯 全球直连"}
+     {"source_ip_cidr": "192.168.15.0/24", "outbound": "cn2gia"}
    ],
     
    "rule_set": [
